@@ -34,7 +34,7 @@ class FlowerClient(fl.client.NumPyClient):
         self.model = ModelFactory.create_model(config).to(self.device)
         self.epsilon = config.ldp.epsilon
 
-        fraction = int(config.poisoning.fraction)
+        fraction = float(config.poisoning.fraction)
         r = np.random.random(1)[0]
         if r < fraction:
             print(f"client {client_id} is poisoned------------------------------------")

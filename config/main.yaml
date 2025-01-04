@@ -3,7 +3,7 @@ model:
   num_classes: 9
 
 client:
-  count: 4
+  count: 50
   resources:
     num_cpus: 1 #number of cpus per client
     num_gpus: 1 # Fraction of clients per gpu
@@ -20,11 +20,11 @@ dataset:
 
 strategy:
   name: "FedAvg"
-  fraction_train_clients: 0.7
+  fraction_train_clients: 0.05
   config_fit:
     lr: 0.01
     momentum: 0.9
-    local_epochs: 2
+    local_epochs: 1
     local_batch_size: 16
   num_rounds: 50
   device: "cuda" # "cuda" or "cpu"
@@ -37,14 +37,14 @@ poisoning:
   gaussian_noise: False
   crop: 0
   size: [224,224]
-  fraction: 1.0
+  fraction: 0
 
 
   attack: "label-flipping"
 
 
   target_label: 0
-  attack_type: "targeted"
+  attack_type: "untargeted"
   attack_ratio: 0.5
   attack_clients: 0.1
   attack_rounds: 10

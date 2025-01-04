@@ -2,8 +2,6 @@ from abc import ABC, abstractmethod
 import torch
 import torch.nn.functional as F
 import numpy as np
-from torchvision.transforms.v2.functional import gaussian_noise
-
 from src.modules.attacks.utils import get_ar_params
 
 
@@ -66,7 +64,7 @@ class AutoRegressorAttack(Attack):
         if self.crop is None:
             self.crop = 3
 
-        if gaussian_noise is None:
+        if self.gaussian_noise is None:
             self.gaussian_noise = False
 
         if self.epsilon is None:
