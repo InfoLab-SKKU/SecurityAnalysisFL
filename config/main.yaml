@@ -3,7 +3,7 @@ model:
   num_classes: 9
 
 client:
-  count: 50
+  count: 200
   resources:
     num_cpus: 1 #number of cpus per client
     num_gpus: 1 # Fraction of clients per gpu
@@ -19,7 +19,7 @@ dataset:
     num_classes_per_partition: 2 # number of classes per partition *PathologicalPartitioner
 
 strategy:
-  name: "FedAvg"
+  name: "FedMedian"
   fraction_train_clients: 0.05
   config_fit:
     lr: 0.01
@@ -37,7 +37,7 @@ poisoning:
   gaussian_noise: False
   crop: 0
   size: [224,224]
-  fraction: 0
+  fraction: 0.1
 
 
   attack: "label-flipping"
