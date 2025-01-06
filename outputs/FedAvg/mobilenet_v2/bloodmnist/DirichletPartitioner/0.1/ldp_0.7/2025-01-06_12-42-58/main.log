@@ -1,0 +1,1889 @@
+[2025-01-06 12:43:04,462][flwr][INFO] - Starting Flower simulation, config: num_rounds=100, no round_timeout
+[2025-01-06 12:43:09,595][flwr][INFO] - Flower VCE: Ray initialized with resources: {'memory': 144602348544.0, 'node:__internal_head__': 1.0, 'node:115.145.172.224': 1.0, 'object_store_memory': 66258149376.0, 'accelerator_type:G': 1.0, 'GPU': 2.0, 'CPU': 256.0}
+[2025-01-06 12:43:09,595][flwr][INFO] - Optimize your simulation with Flower VCE: https://flower.ai/docs/framework/how-to-run-simulations.html
+[2025-01-06 12:43:09,596][flwr][INFO] - Flower VCE: Resources for each Virtual Client: {'num_cpus': 24, 'num_gpus': 0.125}
+[2025-01-06 12:43:09,612][flwr][INFO] - Flower VCE: Creating VirtualClientEngineActorPool with 10 actors
+[2025-01-06 12:43:09,612][flwr][INFO] - [INIT]
+[2025-01-06 12:43:09,612][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-06 12:43:13,766][flwr][INFO] - Received initial parameters from one random client
+[2025-01-06 12:43:13,766][flwr][INFO] - Evaluating initial global parameters
+[2025-01-06 12:43:21,075][flwr][INFO] - initial parameters (loss, other metrics): 223.50119996070862, {'accuracy': 0.09792458345513008}
+[2025-01-06 12:43:21,076][flwr][INFO] - 
+[2025-01-06 12:43:21,076][flwr][INFO] - [ROUND 1]
+[2025-01-06 12:43:21,076][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:25,750][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:43:25,851][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-01-06 12:43:31,855][flwr][INFO] - fit progress: (1, 229.24479866027832, {'accuracy': 0.08973984215141771}, 10.779801928962115)
+[2025-01-06 12:43:31,856][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:32,186][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:43:32,186][flwr][INFO] - 
+[2025-01-06 12:43:32,186][flwr][INFO] - [ROUND 2]
+[2025-01-06 12:43:32,187][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:34,209][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:43:39,378][flwr][INFO] - fit progress: (2, 232.93403148651123, {'accuracy': 0.1826951183864367}, 18.302689909993205)
+[2025-01-06 12:43:39,379][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:39,845][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:43:39,845][flwr][INFO] - 
+[2025-01-06 12:43:39,845][flwr][INFO] - [ROUND 3]
+[2025-01-06 12:43:39,846][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:40,438][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:43:45,731][flwr][INFO] - fit progress: (3, 280.61340045928955, {'accuracy': 0.1373867290266004}, 24.655662351986393)
+[2025-01-06 12:43:45,732][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:46,183][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:43:46,183][flwr][INFO] - 
+[2025-01-06 12:43:46,183][flwr][INFO] - [ROUND 4]
+[2025-01-06 12:43:46,183][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:50,035][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:43:55,936][flwr][INFO] - fit progress: (4, 230.5345060825348, {'accuracy': 0.33440514469453375}, 34.859903051983565)
+[2025-01-06 12:43:55,938][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:56,347][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:43:56,348][flwr][INFO] - 
+[2025-01-06 12:43:56,348][flwr][INFO] - [ROUND 5]
+[2025-01-06 12:43:56,348][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:43:57,560][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:02,842][flwr][INFO] - fit progress: (5, 323.66901898384094, {'accuracy': 0.19584916691026016}, 41.76647921395488)
+[2025-01-06 12:44:02,842][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:03,377][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:03,377][flwr][INFO] - 
+[2025-01-06 12:44:03,377][flwr][INFO] - [ROUND 6]
+[2025-01-06 12:44:03,377][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:04,658][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:09,801][flwr][INFO] - fit progress: (6, 325.921133518219, {'accuracy': 0.08710903244665302}, 48.7257853889605)
+[2025-01-06 12:44:09,802][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:10,268][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:10,269][flwr][INFO] - 
+[2025-01-06 12:44:10,269][flwr][INFO] - [ROUND 7]
+[2025-01-06 12:44:10,269][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:11,310][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:16,548][flwr][INFO] - fit progress: (7, 406.12108516693115, {'accuracy': 0.09090909090909091}, 55.472576794971246)
+[2025-01-06 12:44:16,549][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:16,964][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:16,965][flwr][INFO] - 
+[2025-01-06 12:44:16,965][flwr][INFO] - [ROUND 8]
+[2025-01-06 12:44:16,965][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:18,446][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:23,223][flwr][INFO] - fit progress: (8, 423.7723705768585, {'accuracy': 0.09090909090909091}, 62.14740334497765)
+[2025-01-06 12:44:23,223][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:23,642][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:23,643][flwr][INFO] - 
+[2025-01-06 12:44:23,643][flwr][INFO] - [ROUND 9]
+[2025-01-06 12:44:23,643][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:26,895][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:31,898][flwr][INFO] - fit progress: (9, 507.0335509777069, {'accuracy': 0.07132417421806489}, 70.82239141198806)
+[2025-01-06 12:44:31,899][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:32,209][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:32,209][flwr][INFO] - 
+[2025-01-06 12:44:32,210][flwr][INFO] - [ROUND 10]
+[2025-01-06 12:44:32,210][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:33,159][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:37,938][flwr][INFO] - fit progress: (10, 620.0624947547913, {'accuracy': 0.19497223034200525}, 76.86278968100669)
+[2025-01-06 12:44:37,939][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:38,299][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:38,299][flwr][INFO] - 
+[2025-01-06 12:44:38,299][flwr][INFO] - [ROUND 11]
+[2025-01-06 12:44:38,300][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:40,588][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:45,537][flwr][INFO] - fit progress: (11, 398.5684087276459, {'accuracy': 0.08710903244665302}, 84.46176028996706)
+[2025-01-06 12:44:45,538][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:45,893][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:45,893][flwr][INFO] - 
+[2025-01-06 12:44:45,894][flwr][INFO] - [ROUND 12]
+[2025-01-06 12:44:45,894][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:46,701][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:51,639][flwr][INFO] - fit progress: (12, 315.33016085624695, {'accuracy': 0.18035662087109033}, 90.56315324996831)
+[2025-01-06 12:44:51,639][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:51,963][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:51,963][flwr][INFO] - 
+[2025-01-06 12:44:51,963][flwr][INFO] - [ROUND 13]
+[2025-01-06 12:44:51,964][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:54,096][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:44:58,874][flwr][INFO] - fit progress: (13, 234.50738084316254, {'accuracy': 0.24437299035369775}, 97.79830394196324)
+[2025-01-06 12:44:58,874][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:44:59,252][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:44:59,252][flwr][INFO] - 
+[2025-01-06 12:44:59,252][flwr][INFO] - [ROUND 14]
+[2025-01-06 12:44:59,252][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:02,742][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:07,551][flwr][INFO] - fit progress: (14, 291.58272552490234, {'accuracy': 0.21835720549546916}, 106.47536311496515)
+[2025-01-06 12:45:07,551][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:07,641][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:45:07,642][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:45:07,870][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:45:07,870][flwr][INFO] - 
+[2025-01-06 12:45:07,870][flwr][INFO] - [ROUND 15]
+[2025-01-06 12:45:07,870][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:09,545][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:14,359][flwr][INFO] - fit progress: (15, 363.2475427389145, {'accuracy': 0.31569716457176267}, 113.28325294097885)
+[2025-01-06 12:45:14,359][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:14,906][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:14,906][flwr][INFO] - 
+[2025-01-06 12:45:14,906][flwr][INFO] - [ROUND 16]
+[2025-01-06 12:45:14,906][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:15,591][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:20,439][flwr][INFO] - fit progress: (16, 441.27981638908386, {'accuracy': 0.19526454253142356}, 119.36323377199005)
+[2025-01-06 12:45:20,439][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:20,734][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:20,734][flwr][INFO] - 
+[2025-01-06 12:45:20,734][flwr][INFO] - [ROUND 17]
+[2025-01-06 12:45:20,734][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:23,414][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:28,192][flwr][INFO] - fit progress: (17, 371.93389320373535, {'accuracy': 0.1397252265419468}, 127.11683730600635)
+[2025-01-06 12:45:28,193][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:28,497][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:28,497][flwr][INFO] - 
+[2025-01-06 12:45:28,497][flwr][INFO] - [ROUND 18]
+[2025-01-06 12:45:28,497][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:31,204][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:36,021][flwr][INFO] - fit progress: (18, 446.12510895729065, {'accuracy': 0.14761765565624085}, 134.94523074000608)
+[2025-01-06 12:45:36,021][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:36,302][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:36,302][flwr][INFO] - 
+[2025-01-06 12:45:36,302][flwr][INFO] - [ROUND 19]
+[2025-01-06 12:45:36,302][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:36,380][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:45:36,380][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:45:37,288][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:45:41,980][flwr][INFO] - fit progress: (19, 360.97213196754456, {'accuracy': 0.1826951183864367}, 140.9045844670036)
+[2025-01-06 12:45:41,980][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:42,416][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:42,416][flwr][INFO] - 
+[2025-01-06 12:45:42,416][flwr][INFO] - [ROUND 20]
+[2025-01-06 12:45:42,417][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:44,029][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:48,805][flwr][INFO] - fit progress: (20, 334.5165898799896, {'accuracy': 0.19731072785735165}, 147.72973159799585)
+[2025-01-06 12:45:48,806][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:49,126][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:49,126][flwr][INFO] - 
+[2025-01-06 12:45:49,127][flwr][INFO] - [ROUND 21]
+[2025-01-06 12:45:49,127][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:50,026][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:45:54,875][flwr][INFO] - fit progress: (21, 336.5933039188385, {'accuracy': 0.09792458345513008}, 153.79968585295137)
+[2025-01-06 12:45:54,876][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:55,285][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:45:55,286][flwr][INFO] - 
+[2025-01-06 12:45:55,286][flwr][INFO] - [ROUND 22]
+[2025-01-06 12:45:55,286][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:45:57,056][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:02,256][flwr][INFO] - fit progress: (22, 485.5365147590637, {'accuracy': 0.1870798012277112}, 161.18041034199996)
+[2025-01-06 12:46:02,256][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:02,788][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:02,788][flwr][INFO] - 
+[2025-01-06 12:46:02,788][flwr][INFO] - [ROUND 23]
+[2025-01-06 12:46:02,789][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:02,866][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:46:02,867][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:46:04,072][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:46:08,880][flwr][INFO] - fit progress: (23, 541.6798069477081, {'accuracy': 0.256357790119848}, 167.8045275269542)
+[2025-01-06 12:46:08,880][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:09,196][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:09,196][flwr][INFO] - 
+[2025-01-06 12:46:09,196][flwr][INFO] - [ROUND 24]
+[2025-01-06 12:46:09,197][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:10,916][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:15,824][flwr][INFO] - fit progress: (24, 722.1592230796814, {'accuracy': 0.21923414206372405}, 174.74824559496483)
+[2025-01-06 12:46:15,824][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:16,196][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:16,196][flwr][INFO] - 
+[2025-01-06 12:46:16,196][flwr][INFO] - [ROUND 25]
+[2025-01-06 12:46:16,196][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:19,615][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:24,534][flwr][INFO] - fit progress: (25, 420.7197685241699, {'accuracy': 0.35837474422683424}, 183.4586278499919)
+[2025-01-06 12:46:24,535][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:24,644][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:46:24,645][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:46:24,837][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:46:24,837][flwr][INFO] - 
+[2025-01-06 12:46:24,838][flwr][INFO] - [ROUND 26]
+[2025-01-06 12:46:24,838][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:25,779][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:30,714][flwr][INFO] - fit progress: (26, 449.2333700656891, {'accuracy': 0.31862028646594565}, 189.63891624298412)
+[2025-01-06 12:46:30,715][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:31,112][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:31,112][flwr][INFO] - 
+[2025-01-06 12:46:31,112][flwr][INFO] - [ROUND 27]
+[2025-01-06 12:46:31,113][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:32,455][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:37,261][flwr][INFO] - fit progress: (27, 545.5145537853241, {'accuracy': 0.19643379128909674}, 196.1850456619868)
+[2025-01-06 12:46:37,261][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:37,603][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:37,603][flwr][INFO] - 
+[2025-01-06 12:46:37,603][flwr][INFO] - [ROUND 28]
+[2025-01-06 12:46:37,603][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:40,607][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:45,483][flwr][INFO] - fit progress: (28, 710.3915719985962, {'accuracy': 0.2297573808827828}, 204.40747861098498)
+[2025-01-06 12:46:45,484][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:45,865][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:45,866][flwr][INFO] - 
+[2025-01-06 12:46:45,866][flwr][INFO] - [ROUND 29]
+[2025-01-06 12:46:45,866][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:47,683][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:46:52,712][flwr][INFO] - fit progress: (29, 879.0383195877075, {'accuracy': 0.19467991815258695}, 211.63679972098907)
+[2025-01-06 12:46:52,713][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:53,230][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:53,230][flwr][INFO] - 
+[2025-01-06 12:46:53,230][flwr][INFO] - [ROUND 30]
+[2025-01-06 12:46:53,230][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:53,431][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:46:53,431][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:46:53,736][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:46:58,596][flwr][INFO] - fit progress: (30, 1059.1178164482117, {'accuracy': 0.19467991815258695}, 217.5202160779736)
+[2025-01-06 12:46:58,596][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:46:58,925][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:46:58,925][flwr][INFO] - 
+[2025-01-06 12:46:58,925][flwr][INFO] - [ROUND 31]
+[2025-01-06 12:46:58,925][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:01,118][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:05,896][flwr][INFO] - fit progress: (31, 552.264276266098, {'accuracy': 0.19935691318327975}, 224.82020174595527)
+[2025-01-06 12:47:05,896][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:06,228][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:06,228][flwr][INFO] - 
+[2025-01-06 12:47:06,228][flwr][INFO] - [ROUND 32]
+[2025-01-06 12:47:06,228][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:07,874][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:13,314][flwr][INFO] - fit progress: (32, 215.5356262922287, {'accuracy': 0.38672902660040925}, 232.23806284496095)
+[2025-01-06 12:47:13,314][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:13,888][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:13,888][flwr][INFO] - 
+[2025-01-06 12:47:13,888][flwr][INFO] - [ROUND 33]
+[2025-01-06 12:47:13,889][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:16,002][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:20,865][flwr][INFO] - fit progress: (33, 171.7906435728073, {'accuracy': 0.3703595439929845}, 239.78907947900007)
+[2025-01-06 12:47:20,865][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:21,166][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:21,167][flwr][INFO] - 
+[2025-01-06 12:47:21,167][flwr][INFO] - [ROUND 34]
+[2025-01-06 12:47:21,167][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:22,253][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:27,063][flwr][INFO] - fit progress: (34, 281.01652467250824, {'accuracy': 0.1824028061970184}, 245.98762066400377)
+[2025-01-06 12:47:27,063][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:27,406][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:27,407][flwr][INFO] - 
+[2025-01-06 12:47:27,407][flwr][INFO] - [ROUND 35]
+[2025-01-06 12:47:27,407][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:29,861][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:34,697][flwr][INFO] - fit progress: (35, 308.88632440567017, {'accuracy': 0.17158725518854137}, 253.62118130200543)
+[2025-01-06 12:47:34,697][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:35,028][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:35,028][flwr][INFO] - 
+[2025-01-06 12:47:35,029][flwr][INFO] - [ROUND 36]
+[2025-01-06 12:47:35,029][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:35,815][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:40,822][flwr][INFO] - fit progress: (36, 273.81331062316895, {'accuracy': 0.17275650394621456}, 259.7464072299772)
+[2025-01-06 12:47:40,822][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:41,149][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:41,149][flwr][INFO] - 
+[2025-01-06 12:47:41,149][flwr][INFO] - [ROUND 37]
+[2025-01-06 12:47:41,149][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:44,210][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:48,953][flwr][INFO] - fit progress: (37, 516.5398817062378, {'accuracy': 0.3332358959368606}, 267.8776230349904)
+[2025-01-06 12:47:48,953][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:49,302][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:49,303][flwr][INFO] - 
+[2025-01-06 12:47:49,303][flwr][INFO] - [ROUND 38]
+[2025-01-06 12:47:49,303][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:50,709][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:47:55,567][flwr][INFO] - fit progress: (38, 771.677339553833, {'accuracy': 0.20140309850920785}, 274.49171275499975)
+[2025-01-06 12:47:55,568][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:55,913][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:47:55,914][flwr][INFO] - 
+[2025-01-06 12:47:55,914][flwr][INFO] - [ROUND 39]
+[2025-01-06 12:47:55,914][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:47:56,007][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:47:56,008][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:47:56,932][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:48:01,771][flwr][INFO] - fit progress: (39, 856.689022064209, {'accuracy': 0.19877228880444314}, 280.69554280198645)
+[2025-01-06 12:48:01,772][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:02,299][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:02,300][flwr][INFO] - 
+[2025-01-06 12:48:02,300][flwr][INFO] - [ROUND 40]
+[2025-01-06 12:48:02,300][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:02,971][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:07,864][flwr][INFO] - fit progress: (40, 424.60129141807556, {'accuracy': 0.2765273311897106}, 286.78798932995414)
+[2025-01-06 12:48:07,864][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:07,965][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:48:07,965][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:48:08,148][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:48:08,148][flwr][INFO] - 
+[2025-01-06 12:48:08,148][flwr][INFO] - [ROUND 41]
+[2025-01-06 12:48:08,148][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:09,662][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:14,450][flwr][INFO] - fit progress: (41, 693.9350490570068, {'accuracy': 0.20315697164571764}, 293.3749376809574)
+[2025-01-06 12:48:14,451][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:14,883][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:14,883][flwr][INFO] - 
+[2025-01-06 12:48:14,883][flwr][INFO] - [ROUND 42]
+[2025-01-06 12:48:14,883][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:18,169][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:23,384][flwr][INFO] - fit progress: (42, 560.0632035732269, {'accuracy': 0.36275942706810876}, 302.30835271795513)
+[2025-01-06 12:48:23,384][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:23,832][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:23,833][flwr][INFO] - 
+[2025-01-06 12:48:23,833][flwr][INFO] - [ROUND 43]
+[2025-01-06 12:48:23,833][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:25,463][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:30,315][flwr][INFO] - fit progress: (43, 585.837742805481, {'accuracy': 0.42648348436129785}, 309.23929035197943)
+[2025-01-06 12:48:30,315][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:30,739][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:30,739][flwr][INFO] - 
+[2025-01-06 12:48:30,739][flwr][INFO] - [ROUND 44]
+[2025-01-06 12:48:30,739][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:32,189][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:36,947][flwr][INFO] - fit progress: (44, 2204.1853923797607, {'accuracy': 0.10084770534931306}, 315.8715823729872)
+[2025-01-06 12:48:36,947][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:37,232][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:37,232][flwr][INFO] - 
+[2025-01-06 12:48:37,232][flwr][INFO] - [ROUND 45]
+[2025-01-06 12:48:37,232][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:38,091][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:43,042][flwr][INFO] - fit progress: (45, 2183.1707487106323, {'accuracy': 0.09470914937152879}, 321.9662618779694)
+[2025-01-06 12:48:43,042][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:43,434][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:43,434][flwr][INFO] - 
+[2025-01-06 12:48:43,434][flwr][INFO] - [ROUND 46]
+[2025-01-06 12:48:43,434][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:44,002][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:48,944][flwr][INFO] - fit progress: (46, 1082.236400604248, {'accuracy': 0.0944168371821105}, 327.86864858696936)
+[2025-01-06 12:48:48,945][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:49,370][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:49,370][flwr][INFO] - 
+[2025-01-06 12:48:49,370][flwr][INFO] - [ROUND 47]
+[2025-01-06 12:48:49,370][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:50,276][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:48:55,618][flwr][INFO] - fit progress: (47, 493.6671130657196, {'accuracy': 0.21660333235895937}, 334.5427136349608)
+[2025-01-06 12:48:55,619][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:55,919][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:48:55,920][flwr][INFO] - 
+[2025-01-06 12:48:55,920][flwr][INFO] - [ROUND 48]
+[2025-01-06 12:48:55,920][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:48:57,637][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:02,963][flwr][INFO] - fit progress: (48, 523.7905611991882, {'accuracy': 0.21543408360128619}, 341.88717217498925)
+[2025-01-06 12:49:02,963][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:03,250][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:03,250][flwr][INFO] - 
+[2025-01-06 12:49:03,250][flwr][INFO] - [ROUND 49]
+[2025-01-06 12:49:03,250][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:05,040][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:10,700][flwr][INFO] - fit progress: (49, 624.9156115055084, {'accuracy': 0.3197895352236188}, 349.62466430297354)
+[2025-01-06 12:49:10,701][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:11,120][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:11,120][flwr][INFO] - 
+[2025-01-06 12:49:11,120][flwr][INFO] - [ROUND 50]
+[2025-01-06 12:49:11,120][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:13,047][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:17,917][flwr][INFO] - fit progress: (50, 487.1822829246521, {'accuracy': 0.4641917567962584}, 356.8409997400013)
+[2025-01-06 12:49:17,917][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:18,229][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:18,230][flwr][INFO] - 
+[2025-01-06 12:49:18,230][flwr][INFO] - [ROUND 51]
+[2025-01-06 12:49:18,230][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:19,511][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:24,384][flwr][INFO] - fit progress: (51, 820.2197871208191, {'accuracy': 0.2814966384098217}, 363.3079788549803)
+[2025-01-06 12:49:24,384][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:24,782][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:24,782][flwr][INFO] - 
+[2025-01-06 12:49:24,782][flwr][INFO] - [ROUND 52]
+[2025-01-06 12:49:24,782][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:26,321][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:31,170][flwr][INFO] - fit progress: (52, 589.7888658046722, {'accuracy': 0.25109617071031864}, 370.0942998100072)
+[2025-01-06 12:49:31,170][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:31,504][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:31,504][flwr][INFO] - 
+[2025-01-06 12:49:31,504][flwr][INFO] - [ROUND 53]
+[2025-01-06 12:49:31,504][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:32,606][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:37,484][flwr][INFO] - fit progress: (53, 1090.7725853919983, {'accuracy': 0.09178602747734581}, 376.4081184589886)
+[2025-01-06 12:49:37,484][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:37,787][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:37,788][flwr][INFO] - 
+[2025-01-06 12:49:37,788][flwr][INFO] - [ROUND 54]
+[2025-01-06 12:49:37,788][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:39,847][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:45,364][flwr][INFO] - fit progress: (54, 329.1720790863037, {'accuracy': 0.33528208126278863}, 384.28818619897356)
+[2025-01-06 12:49:45,364][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:45,462][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:49:45,467][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:49:45,669][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:49:45,669][flwr][INFO] - 
+[2025-01-06 12:49:45,669][flwr][INFO] - [ROUND 55]
+[2025-01-06 12:49:45,669][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:47,695][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:49:53,097][flwr][INFO] - fit progress: (55, 272.59604012966156, {'accuracy': 0.38526746565331776}, 392.02184433396906)
+[2025-01-06 12:49:53,098][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:53,500][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:49:53,501][flwr][INFO] - 
+[2025-01-06 12:49:53,501][flwr][INFO] - [ROUND 56]
+[2025-01-06 12:49:53,501][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:49:55,152][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:00,813][flwr][INFO] - fit progress: (56, 375.4678122997284, {'accuracy': 0.43729903536977494}, 399.7371075359988)
+[2025-01-06 12:50:00,813][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:01,290][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:01,291][flwr][INFO] - 
+[2025-01-06 12:50:01,291][flwr][INFO] - [ROUND 57]
+[2025-01-06 12:50:01,291][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:01,826][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:07,507][flwr][INFO] - fit progress: (57, 237.64061558246613, {'accuracy': 0.16866413329435836}, 406.43098782299785)
+[2025-01-06 12:50:07,507][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:07,821][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:07,821][flwr][INFO] - 
+[2025-01-06 12:50:07,822][flwr][INFO] - [ROUND 58]
+[2025-01-06 12:50:07,822][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:08,739][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:13,607][flwr][INFO] - fit progress: (58, 512.6831839084625, {'accuracy': 0.2814966384098217}, 412.5313287889585)
+[2025-01-06 12:50:13,607][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:14,010][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:14,010][flwr][INFO] - 
+[2025-01-06 12:50:14,010][flwr][INFO] - [ROUND 59]
+[2025-01-06 12:50:14,010][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:17,827][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:22,662][flwr][INFO] - fit progress: (59, 220.09556019306183, {'accuracy': 0.3878982753580824}, 421.5862881799694)
+[2025-01-06 12:50:22,662][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:23,083][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:23,083][flwr][INFO] - 
+[2025-01-06 12:50:23,083][flwr][INFO] - [ROUND 60]
+[2025-01-06 12:50:23,083][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:24,382][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:29,166][flwr][INFO] - fit progress: (60, 489.74676752090454, {'accuracy': 0.2508038585209003}, 428.09083838696824)
+[2025-01-06 12:50:29,167][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:29,501][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:29,502][flwr][INFO] - 
+[2025-01-06 12:50:29,502][flwr][INFO] - [ROUND 61]
+[2025-01-06 12:50:29,502][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:29,560][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:50:29,560][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:50:30,147][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:50:34,852][flwr][INFO] - fit progress: (61, 1384.5686254501343, {'accuracy': 0.07132417421806489}, 433.77643430797616)
+[2025-01-06 12:50:34,852][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:35,130][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:35,130][flwr][INFO] - 
+[2025-01-06 12:50:35,130][flwr][INFO] - [ROUND 62]
+[2025-01-06 12:50:35,130][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:35,908][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:40,665][flwr][INFO] - fit progress: (62, 652.9826641082764, {'accuracy': 0.23852674656533177}, 439.58952049398795)
+[2025-01-06 12:50:40,666][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:41,094][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:41,094][flwr][INFO] - 
+[2025-01-06 12:50:41,095][flwr][INFO] - [ROUND 63]
+[2025-01-06 12:50:41,095][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:44,196][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:48,952][flwr][INFO] - fit progress: (63, 265.576985001564, {'accuracy': 0.28529669687225956}, 447.87664024095284)
+[2025-01-06 12:50:48,952][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:49,303][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:49,303][flwr][INFO] - 
+[2025-01-06 12:50:49,303][flwr][INFO] - [ROUND 64]
+[2025-01-06 12:50:49,303][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:51,291][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:50:55,982][flwr][INFO] - fit progress: (64, 416.6555678844452, {'accuracy': 0.16749488453668518}, 454.9069357619737)
+[2025-01-06 12:50:55,983][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:56,365][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:50:56,366][flwr][INFO] - 
+[2025-01-06 12:50:56,366][flwr][INFO] - [ROUND 65]
+[2025-01-06 12:50:56,366][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:50:57,282][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:02,474][flwr][INFO] - fit progress: (65, 309.1864855289459, {'accuracy': 0.19351066939491376}, 461.3980267299921)
+[2025-01-06 12:51:02,474][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:02,811][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:02,811][flwr][INFO] - 
+[2025-01-06 12:51:02,811][flwr][INFO] - [ROUND 66]
+[2025-01-06 12:51:02,812][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:04,291][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:09,906][flwr][INFO] - fit progress: (66, 236.01781630516052, {'accuracy': 0.2943583747442268}, 468.83042439597193)
+[2025-01-06 12:51:09,906][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:10,299][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:10,299][flwr][INFO] - 
+[2025-01-06 12:51:10,299][flwr][INFO] - [ROUND 67]
+[2025-01-06 12:51:10,300][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:10,999][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:15,743][flwr][INFO] - fit progress: (67, 334.5598158836365, {'accuracy': 0.35749780765857936}, 474.6677692749654)
+[2025-01-06 12:51:15,744][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:16,061][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:16,061][flwr][INFO] - 
+[2025-01-06 12:51:16,061][flwr][INFO] - [ROUND 68]
+[2025-01-06 12:51:16,061][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:19,326][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:24,201][flwr][INFO] - fit progress: (68, 392.0568947792053, {'accuracy': 0.2358959368605671}, 483.1254613099736)
+[2025-01-06 12:51:24,201][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:24,536][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:24,536][flwr][INFO] - 
+[2025-01-06 12:51:24,536][flwr][INFO] - [ROUND 69]
+[2025-01-06 12:51:24,536][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:26,604][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:31,413][flwr][INFO] - fit progress: (69, 496.0889458656311, {'accuracy': 0.400175387313651}, 490.3373918340076)
+[2025-01-06 12:51:31,413][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:31,706][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:31,706][flwr][INFO] - 
+[2025-01-06 12:51:31,706][flwr][INFO] - [ROUND 70]
+[2025-01-06 12:51:31,706][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:33,548][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:38,339][flwr][INFO] - fit progress: (70, 420.30020093917847, {'accuracy': 0.1853259280912014}, 497.26331721496535)
+[2025-01-06 12:51:38,339][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:38,661][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:38,661][flwr][INFO] - 
+[2025-01-06 12:51:38,662][flwr][INFO] - [ROUND 71]
+[2025-01-06 12:51:38,662][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:40,238][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:44,993][flwr][INFO] - fit progress: (71, 228.97635555267334, {'accuracy': 0.31102016954106987}, 503.91731171298306)
+[2025-01-06 12:51:44,993][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:45,337][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:45,338][flwr][INFO] - 
+[2025-01-06 12:51:45,338][flwr][INFO] - [ROUND 72]
+[2025-01-06 12:51:45,338][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:46,982][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:51,768][flwr][INFO] - fit progress: (72, 361.6717562675476, {'accuracy': 0.33498976907337036}, 510.69219199597137)
+[2025-01-06 12:51:51,768][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:52,166][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:52,167][flwr][INFO] - 
+[2025-01-06 12:51:52,167][flwr][INFO] - [ROUND 73]
+[2025-01-06 12:51:52,167][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:53,068][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:51:57,895][flwr][INFO] - fit progress: (73, 782.6825046539307, {'accuracy': 0.16924875767319497}, 516.8194072709884)
+[2025-01-06 12:51:57,895][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:51:58,356][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:51:58,356][flwr][INFO] - 
+[2025-01-06 12:51:58,356][flwr][INFO] - [ROUND 74]
+[2025-01-06 12:51:58,356][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:01,689][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:06,467][flwr][INFO] - fit progress: (74, 214.55716276168823, {'accuracy': 0.6498099970768781}, 525.391355781001)
+[2025-01-06 12:52:06,467][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:06,809][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:06,810][flwr][INFO] - 
+[2025-01-06 12:52:06,810][flwr][INFO] - [ROUND 75]
+[2025-01-06 12:52:06,810][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:06,874][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:52:06,874][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539114, ip=115.145.172.224, actor_id=0d621d25718820ae03838e0601000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9b28085990>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:52:07,492][flwr][INFO] - aggregate_fit: received 1 results and 1 failures
+[2025-01-06 12:52:12,297][flwr][INFO] - fit progress: (75, 817.3426308631897, {'accuracy': 0.30985092078339666}, 531.221114971966)
+[2025-01-06 12:52:12,297][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:12,716][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:12,717][flwr][INFO] - 
+[2025-01-06 12:52:12,717][flwr][INFO] - [ROUND 76]
+[2025-01-06 12:52:12,717][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:14,843][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:19,589][flwr][INFO] - fit progress: (76, 311.6624890565872, {'accuracy': 0.3028354282373575}, 538.5135395120014)
+[2025-01-06 12:52:19,589][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:19,868][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:19,868][flwr][INFO] - 
+[2025-01-06 12:52:19,869][flwr][INFO] - [ROUND 77]
+[2025-01-06 12:52:19,869][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:21,272][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:26,051][flwr][INFO] - fit progress: (77, 250.83645963668823, {'accuracy': 0.30838935983630517}, 544.9758181239595)
+[2025-01-06 12:52:26,052][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:26,388][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:26,388][flwr][INFO] - 
+[2025-01-06 12:52:26,388][flwr][INFO] - [ROUND 78]
+[2025-01-06 12:52:26,389][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:28,252][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:33,647][flwr][INFO] - fit progress: (78, 254.75654006004333, {'accuracy': 0.19789535223618826}, 552.5717692689504)
+[2025-01-06 12:52:33,648][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:33,993][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:33,993][flwr][INFO] - 
+[2025-01-06 12:52:33,993][flwr][INFO] - [ROUND 79]
+[2025-01-06 12:52:33,993][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:35,907][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:41,528][flwr][INFO] - fit progress: (79, 403.34844160079956, {'accuracy': 0.21426483484361297}, 560.4523976490018)
+[2025-01-06 12:52:41,528][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:41,805][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:41,805][flwr][INFO] - 
+[2025-01-06 12:52:41,805][flwr][INFO] - [ROUND 80]
+[2025-01-06 12:52:41,805][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:43,937][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:49,032][flwr][INFO] - fit progress: (80, 497.4528660774231, {'accuracy': 0.29114294066062557}, 567.9562483349582)
+[2025-01-06 12:52:49,032][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:49,447][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:49,447][flwr][INFO] - 
+[2025-01-06 12:52:49,447][flwr][INFO] - [ROUND 81]
+[2025-01-06 12:52:49,447][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:50,339][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:52:55,316][flwr][INFO] - fit progress: (81, 329.0474967956543, {'accuracy': 0.22771119555685473}, 574.2406361489557)
+[2025-01-06 12:52:55,317][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:55,638][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:52:55,638][flwr][INFO] - 
+[2025-01-06 12:52:55,638][flwr][INFO] - [ROUND 82]
+[2025-01-06 12:52:55,638][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:52:57,015][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:01,905][flwr][INFO] - fit progress: (82, 272.6710693836212, {'accuracy': 0.20286465945629933}, 580.8291612580069)
+[2025-01-06 12:53:01,905][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:02,311][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:02,312][flwr][INFO] - 
+[2025-01-06 12:53:02,312][flwr][INFO] - [ROUND 83]
+[2025-01-06 12:53:02,312][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:05,990][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:11,140][flwr][INFO] - fit progress: (83, 210.43325233459473, {'accuracy': 0.4402221572639579}, 590.0647097009933)
+[2025-01-06 12:53:11,141][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:11,556][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:11,557][flwr][INFO] - 
+[2025-01-06 12:53:11,557][flwr][INFO] - [ROUND 84]
+[2025-01-06 12:53:11,557][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:13,698][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:18,491][flwr][INFO] - fit progress: (84, 651.4075026512146, {'accuracy': 0.27711195556854723}, 597.4151194629958)
+[2025-01-06 12:53:18,491][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:18,759][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:18,760][flwr][INFO] - 
+[2025-01-06 12:53:18,760][flwr][INFO] - [ROUND 85]
+[2025-01-06 12:53:18,760][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:19,431][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:24,184][flwr][INFO] - fit progress: (85, 347.0846972465515, {'accuracy': 0.14323297281496639}, 603.1089033719618)
+[2025-01-06 12:53:24,185][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:24,544][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:24,544][flwr][INFO] - 
+[2025-01-06 12:53:24,544][flwr][INFO] - [ROUND 86]
+[2025-01-06 12:53:24,544][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:25,358][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:30,128][flwr][INFO] - fit progress: (86, 224.39491879940033, {'accuracy': 0.29815843320666474}, 609.0528742869501)
+[2025-01-06 12:53:30,129][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:30,460][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:30,460][flwr][INFO] - 
+[2025-01-06 12:53:30,460][flwr][INFO] - [ROUND 87]
+[2025-01-06 12:53:30,461][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:32,295][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:37,073][flwr][INFO] - fit progress: (87, 181.0106302499771, {'accuracy': 0.3960830166617948}, 615.9969684209791)
+[2025-01-06 12:53:37,073][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:37,516][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:37,516][flwr][INFO] - 
+[2025-01-06 12:53:37,517][flwr][INFO] - [ROUND 88]
+[2025-01-06 12:53:37,517][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:40,815][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:45,597][flwr][INFO] - fit progress: (88, 246.05895161628723, {'accuracy': 0.38702133878982753}, 624.5216648339992)
+[2025-01-06 12:53:45,598][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:45,939][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:45,939][flwr][INFO] - 
+[2025-01-06 12:53:45,939][flwr][INFO] - [ROUND 89]
+[2025-01-06 12:53:45,939][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:46,955][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:52,058][flwr][INFO] - fit progress: (89, 367.61104011535645, {'accuracy': 0.2548962291727565}, 630.982239867968)
+[2025-01-06 12:53:52,058][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:52,584][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:52,584][flwr][INFO] - 
+[2025-01-06 12:53:52,584][flwr][INFO] - [ROUND 90]
+[2025-01-06 12:53:52,584][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:54,623][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:53:59,481][flwr][INFO] - fit progress: (90, 179.25054037570953, {'accuracy': 0.3756211634025139}, 638.4053320479579)
+[2025-01-06 12:53:59,481][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:53:59,827][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:53:59,828][flwr][INFO] - 
+[2025-01-06 12:53:59,828][flwr][INFO] - [ROUND 91]
+[2025-01-06 12:53:59,828][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:01,723][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:06,499][flwr][INFO] - fit progress: (91, 308.2796607017517, {'accuracy': 0.24729611224788073}, 645.4238690779894)
+[2025-01-06 12:54:06,500][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:06,793][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:06,794][flwr][INFO] - 
+[2025-01-06 12:54:06,794][flwr][INFO] - [ROUND 92]
+[2025-01-06 12:54:06,794][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:07,861][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:12,752][flwr][INFO] - fit progress: (92, 362.8686604499817, {'accuracy': 0.2098801520023385}, 651.6760695819976)
+[2025-01-06 12:54:12,752][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:13,042][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:13,042][flwr][INFO] - 
+[2025-01-06 12:54:13,042][flwr][INFO] - [ROUND 93]
+[2025-01-06 12:54:13,042][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:15,481][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:20,300][flwr][INFO] - fit progress: (93, 386.9794135093689, {'accuracy': 0.1905875475007308}, 659.2247963089612)
+[2025-01-06 12:54:20,301][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:20,649][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:20,649][flwr][INFO] - 
+[2025-01-06 12:54:20,649][flwr][INFO] - [ROUND 94]
+[2025-01-06 12:54:20,649][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:24,314][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:29,098][flwr][INFO] - fit progress: (94, 568.9077670574188, {'accuracy': 0.26074247296112246}, 668.0223624839564)
+[2025-01-06 12:54:29,098][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:29,194][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:54:29,194][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:54:29,449][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:54:29,449][flwr][INFO] - 
+[2025-01-06 12:54:29,449][flwr][INFO] - [ROUND 95]
+[2025-01-06 12:54:29,449][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:30,249][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:35,080][flwr][INFO] - fit progress: (95, 386.8485617637634, {'accuracy': 0.34463607132417423}, 674.0040073419805)
+[2025-01-06 12:54:35,080][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:35,165][flwr][ERROR] - Traceback (most recent call last):
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_client_proxy.py", line 94, in _submit_job
+    out_mssg, updated_context = self.actor_pool.get_client_result(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 398, in get_client_result
+    return self._fetch_future_result(cid)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 279, in _fetch_future_result
+    res_cid, out_mssg, updated_context = ray.get(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2667, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+[2025-01-06 12:54:35,165][flwr][ERROR] - [36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 143, in __call__
+    return self._call(message, context)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 126, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 95, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/abdenour/SecurityAnalysisFL/src/modules/client.py", line 135, in client_fn
+    client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/fingerprint.py", line 482, in wrapper
+    out = func(dataset, *args, **kwargs)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 4587, in train_test_split
+    raise ValueError(
+ValueError: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=1539115, ip=115.145.172.224, actor_id=909a519c044db7568788b2df01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7f9ed05499c0>)
+  File "/home/abdenour/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 63, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: With n_samples=1, test_size=0.1 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+[2025-01-06 12:54:35,387][flwr][INFO] - aggregate_evaluate: received 1 results and 1 failures
+[2025-01-06 12:54:35,387][flwr][INFO] - 
+[2025-01-06 12:54:35,388][flwr][INFO] - [ROUND 96]
+[2025-01-06 12:54:35,388][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:36,900][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:41,687][flwr][INFO] - fit progress: (96, 417.9901394844055, {'accuracy': 0.2087109032446653}, 680.6118685900001)
+[2025-01-06 12:54:41,688][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:42,123][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:42,123][flwr][INFO] - 
+[2025-01-06 12:54:42,123][flwr][INFO] - [ROUND 97]
+[2025-01-06 12:54:42,123][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:43,495][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:48,284][flwr][INFO] - fit progress: (97, 336.5445969104767, {'accuracy': 0.21835720549546916}, 687.2080066569615)
+[2025-01-06 12:54:48,284][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:48,912][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:48,912][flwr][INFO] - 
+[2025-01-06 12:54:48,912][flwr][INFO] - [ROUND 98]
+[2025-01-06 12:54:48,912][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:49,493][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:54:54,310][flwr][INFO] - fit progress: (98, 383.5939927101135, {'accuracy': 0.2329728149663841}, 693.2346862459672)
+[2025-01-06 12:54:54,311][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:54,660][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:54:54,661][flwr][INFO] - 
+[2025-01-06 12:54:54,661][flwr][INFO] - [ROUND 99]
+[2025-01-06 12:54:54,661][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:54:55,447][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:55:00,173][flwr][INFO] - fit progress: (99, 379.91231632232666, {'accuracy': 0.22624963460976322}, 699.0973959759576)
+[2025-01-06 12:55:00,173][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:55:00,666][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:55:00,666][flwr][INFO] - 
+[2025-01-06 12:55:00,666][flwr][INFO] - [ROUND 100]
+[2025-01-06 12:55:00,666][flwr][INFO] - configure_fit: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:55:01,844][flwr][INFO] - aggregate_fit: received 2 results and 0 failures
+[2025-01-06 12:55:06,557][flwr][INFO] - fit progress: (100, 512.8724012374878, {'accuracy': 0.2519731072785735}, 705.4817758169957)
+[2025-01-06 12:55:06,558][flwr][INFO] - configure_evaluate: strategy sampled 2 clients (out of 50)
+[2025-01-06 12:55:06,966][flwr][INFO] - aggregate_evaluate: received 2 results and 0 failures
+[2025-01-06 12:55:06,967][flwr][INFO] - 
+[2025-01-06 12:55:06,967][flwr][INFO] - [SUMMARY]
+[2025-01-06 12:55:06,967][flwr][INFO] - Run finished 100 round(s) in 705.89s
+[2025-01-06 12:55:06,969][flwr][INFO] - 	History (loss, distributed):
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 1: 1.6456712086995442
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 2: 1.5552025522504533
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 3: 2.7481721008525177
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 4: 1.7173885613271636
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 5: 3.240363994011512
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 6: 4.9297990660065585
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 7: 7.80878954073962
+[2025-01-06 12:55:06,970][flwr][INFO] - 		round 8: 3.6396004131862094
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 9: 3.7528723125104553
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 10: 8.185264720473178
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 11: 4.266617345809936
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 12: 2.531795130835639
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 13: 2.2808436019511165
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 14: 3.5462493896484375
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 15: 3.2225342457111066
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 16: 2.4208943098783493
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 17: 3.2134404800556324
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 18: 0.017797537063333122
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 19: 4.175887177972233
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 20: 5.9540478706359865
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 21: 5.363923303196939
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 22: 5.681382215940035
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 23: 3.935357194958311
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 24: 7.494850740200135
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 25: 7.017297267913818
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 26: 8.150870209648495
+[2025-01-06 12:55:06,971][flwr][INFO] - 		round 27: 3.278340986796788
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 28: 5.4804654993036745
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 29: 12.86673651422773
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 30: 13.289446361029325
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 31: 1.9194155568661897
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 32: 1.912094476088038
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 33: 2.9415671030680337
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 34: 3.9066594563997707
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 35: 3.9052117665608725
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 36: 3.839227236234225
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 37: 5.802588833702935
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 38: 10.263835111329723
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 39: 5.9888439553929125
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 40: 5.674082279205322
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 41: 1.998624698788512
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 42: 1.5074919020688091
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 43: 3.2233981607761235
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 44: 14.300417052374947
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 45: 26.044833819071453
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 46: 11.035131931304932
+[2025-01-06 12:55:06,972][flwr][INFO] - 		round 47: 3.2439066713506524
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 48: 3.8498417489668904
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 49: 2.4772558623346788
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 50: 1.6012393185278264
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 51: 4.887879550457001
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 52: 3.856501438400962
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 53: 13.488146838019876
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 54: 5.169492244720459
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 55: 3.906776184385473
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 56: 7.649551288316226
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 57: 2.7726922035217285
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 58: 0.05434325709939003
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 59: 1.7874966682271753
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 60: 6.721284570365117
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 61: 1.1372158085254744
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 62: 2.530324234681971
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 63: 1.150495343738132
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 64: 4.578476737527287
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 65: 2.6318490685157054
+[2025-01-06 12:55:06,973][flwr][INFO] - 		round 66: 1.2316921671231589
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 67: 3.8407411454087597
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 68: 3.8945586681365967
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 69: 4.9511416753133135
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 70: 5.9915178881751165
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 71: 2.0434533178806307
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 72: 3.491322772843497
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 73: 18.720951671600343
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 74: 6.823550994055612
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 75: 8.557785630226135
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 76: 2.6939730644226074
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 77: 1.1218512608454778
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 78: 1.6464572543079414
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 79: 3.8937925497690835
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 80: 9.272994875907898
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 81: 3.746831481739626
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 82: 1.9025820385326038
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 83: 2.1840812532525313
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 84: 8.849437475204468
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 85: 5.864951252937317
+[2025-01-06 12:55:06,974][flwr][INFO] - 		round 86: 3.6141689300537108
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 87: 2.7886309027671814
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 88: 4.095992565155029
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 89: 2.731348524490992
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 90: 2.083123182581964
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 91: 3.3198049068450928
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 92: 4.092134952545166
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 93: 3.0352812721615745
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 94: 9.667085647583008
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 95: 0.8259416818618774
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 96: 6.662331785474505
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 97: 5.090543533747013
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 98: 4.525330929529099
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 99: 1.1094710367756921
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 100: 5.046275592985607
+[2025-01-06 12:55:06,975][flwr][INFO] - 	History (loss, centralized):
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 0: 223.50119996070862
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 1: 229.24479866027832
+[2025-01-06 12:55:06,975][flwr][INFO] - 		round 2: 232.93403148651123
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 3: 280.61340045928955
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 4: 230.5345060825348
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 5: 323.66901898384094
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 6: 325.921133518219
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 7: 406.12108516693115
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 8: 423.7723705768585
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 9: 507.0335509777069
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 10: 620.0624947547913
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 11: 398.5684087276459
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 12: 315.33016085624695
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 13: 234.50738084316254
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 14: 291.58272552490234
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 15: 363.2475427389145
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 16: 441.27981638908386
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 17: 371.93389320373535
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 18: 446.12510895729065
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 19: 360.97213196754456
+[2025-01-06 12:55:06,976][flwr][INFO] - 		round 20: 334.5165898799896
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 21: 336.5933039188385
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 22: 485.5365147590637
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 23: 541.6798069477081
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 24: 722.1592230796814
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 25: 420.7197685241699
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 26: 449.2333700656891
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 27: 545.5145537853241
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 28: 710.3915719985962
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 29: 879.0383195877075
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 30: 1059.1178164482117
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 31: 552.264276266098
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 32: 215.5356262922287
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 33: 171.7906435728073
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 34: 281.01652467250824
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 35: 308.88632440567017
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 36: 273.81331062316895
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 37: 516.5398817062378
+[2025-01-06 12:55:06,977][flwr][INFO] - 		round 38: 771.677339553833
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 39: 856.689022064209
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 40: 424.60129141807556
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 41: 693.9350490570068
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 42: 560.0632035732269
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 43: 585.837742805481
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 44: 2204.1853923797607
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 45: 2183.1707487106323
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 46: 1082.236400604248
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 47: 493.6671130657196
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 48: 523.7905611991882
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 49: 624.9156115055084
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 50: 487.1822829246521
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 51: 820.2197871208191
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 52: 589.7888658046722
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 53: 1090.7725853919983
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 54: 329.1720790863037
+[2025-01-06 12:55:06,978][flwr][INFO] - 		round 55: 272.59604012966156
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 56: 375.4678122997284
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 57: 237.64061558246613
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 58: 512.6831839084625
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 59: 220.09556019306183
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 60: 489.74676752090454
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 61: 1384.5686254501343
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 62: 652.9826641082764
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 63: 265.576985001564
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 64: 416.6555678844452
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 65: 309.1864855289459
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 66: 236.01781630516052
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 67: 334.5598158836365
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 68: 392.0568947792053
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 69: 496.0889458656311
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 70: 420.30020093917847
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 71: 228.97635555267334
+[2025-01-06 12:55:06,979][flwr][INFO] - 		round 72: 361.6717562675476
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 73: 782.6825046539307
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 74: 214.55716276168823
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 75: 817.3426308631897
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 76: 311.6624890565872
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 77: 250.83645963668823
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 78: 254.75654006004333
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 79: 403.34844160079956
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 80: 497.4528660774231
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 81: 329.0474967956543
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 82: 272.6710693836212
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 83: 210.43325233459473
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 84: 651.4075026512146
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 85: 347.0846972465515
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 86: 224.39491879940033
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 87: 181.0106302499771
+[2025-01-06 12:55:06,980][flwr][INFO] - 		round 88: 246.05895161628723
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 89: 367.61104011535645
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 90: 179.25054037570953
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 91: 308.2796607017517
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 92: 362.8686604499817
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 93: 386.9794135093689
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 94: 568.9077670574188
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 95: 386.8485617637634
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 96: 417.9901394844055
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 97: 336.5445969104767
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 98: 383.5939927101135
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 99: 379.91231632232666
+[2025-01-06 12:55:06,981][flwr][INFO] - 		round 100: 512.8724012374878
+[2025-01-06 12:55:06,981][flwr][INFO] - 	History (metrics, distributed, evaluate):
+[2025-01-06 12:55:06,981][flwr][INFO] - 	{'accuracy': [(1, 0.7222222222222222),
+[2025-01-06 12:55:06,981][flwr][INFO] - 	              (2, 0.5714285714285714),
+[2025-01-06 12:55:06,981][flwr][INFO] - 	              (3, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (4, 0.410958904109589),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (5, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (6, 0.038834951456310676),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (7, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (8, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (9, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (10, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (11, 0.046153846153846156),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (12, 0.2222222222222222),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (13, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (14, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (15, 0.15384615384615385),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (16, 0.4375),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (17, 0.037037037037037035),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (18, 1.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (19, 0.0),
+[2025-01-06 12:55:06,982][flwr][INFO] - 	              (20, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (21, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (22, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (23, 0.36363636363636365),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (24, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (25, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (26, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (27, 0.5892857142857143),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (28, 0.21505376344086022),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (29, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (30, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (31, 0.043478260869565216),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (32, 0.4339622641509434),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (33, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (34, 0.0),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (35, 0.0625),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (36, 0.038461538461538464),
+[2025-01-06 12:55:06,983][flwr][INFO] - 	              (37, 0.16666666666666666),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (38, 0.37209302325581395),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (39, 0.015748031496062992),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (40, 0.0),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (41, 0.8529411764705882),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (42, 0.4444444444444444),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (43, 0.75),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (44, 0.16666666666666666),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (45, 0.013888888888888888),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (46, 0.1),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (47, 0.09090909090909091),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (48, 0.38235294117647056),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (49, 0.2413793103448276),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (50, 0.6341463414634146),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (51, 0.7142857142857143),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (52, 0.13636363636363635),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (53, 0.14705882352941177),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (54, 0.16666666666666666),
+[2025-01-06 12:55:06,984][flwr][INFO] - 	              (55, 0.022727272727272728),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (56, 0.017857142857142856),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (57, 0.0),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (58, 1.0),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (59, 0.2127659574468085),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (60, 0.034482758620689655),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (61, 0.8888888888888888),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (62, 0.43137254901960786),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (63, 0.5555555555555556),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (64, 0.0196078431372549),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (65, 0.20754716981132076),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (66, 0.5666666666666667),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (67, 0.4915254237288136),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (68, 0.25),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (69, 0.19444444444444445),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (70, 0.0),
+[2025-01-06 12:55:06,985][flwr][INFO] - 	              (71, 0.14),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (72, 0.35714285714285715),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (73, 0.07),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (74, 0.05714285714285714),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (75, 0.25),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (76, 0.19444444444444445),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (77, 0.5769230769230769),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (78, 0.4563106796116505),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (79, 0.07407407407407407),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (80, 0.4351851851851852),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (81, 0.2033898305084746),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (82, 0.5),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (83, 0.49122807017543857),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (84, 0.0),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (85, 0.08333333333333333),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (86, 0.0),
+[2025-01-06 12:55:06,986][flwr][INFO] - 	              (87, 0.45098039215686275),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (88, 0.125),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (89, 0.4537037037037037),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (90, 0.29906542056074764),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (91, 0.0),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (92, 0.0),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (93, 0.2619047619047619),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (94, 0.14545454545454545),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (95, 0.6538461538461539),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (96, 0.1564625850340136),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (97, 0.2596153846153846),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (98, 0.07142857142857142),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (99, 0.581081081081081),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (100, 0.015873015873015872)]}
+[2025-01-06 12:55:06,987][flwr][INFO] - 	History (metrics, centralized):
+[2025-01-06 12:55:06,987][flwr][INFO] - 	{'accuracy': [(0, 0.09792458345513008),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (1, 0.08973984215141771),
+[2025-01-06 12:55:06,987][flwr][INFO] - 	              (2, 0.1826951183864367),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (3, 0.1373867290266004),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (4, 0.33440514469453375),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (5, 0.19584916691026016),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (6, 0.08710903244665302),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (7, 0.09090909090909091),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (8, 0.09090909090909091),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (9, 0.07132417421806489),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (10, 0.19497223034200525),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (11, 0.08710903244665302),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (12, 0.18035662087109033),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (13, 0.24437299035369775),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (14, 0.21835720549546916),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (15, 0.31569716457176267),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (16, 0.19526454253142356),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (17, 0.1397252265419468),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (18, 0.14761765565624085),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (19, 0.1826951183864367),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (20, 0.19731072785735165),
+[2025-01-06 12:55:06,988][flwr][INFO] - 	              (21, 0.09792458345513008),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (22, 0.1870798012277112),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (23, 0.256357790119848),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (24, 0.21923414206372405),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (25, 0.35837474422683424),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (26, 0.31862028646594565),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (27, 0.19643379128909674),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (28, 0.2297573808827828),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (29, 0.19467991815258695),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (30, 0.19467991815258695),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (31, 0.19935691318327975),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (32, 0.38672902660040925),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (33, 0.3703595439929845),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (34, 0.1824028061970184),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (35, 0.17158725518854137),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (36, 0.17275650394621456),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (37, 0.3332358959368606),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (38, 0.20140309850920785),
+[2025-01-06 12:55:06,989][flwr][INFO] - 	              (39, 0.19877228880444314),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (40, 0.2765273311897106),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (41, 0.20315697164571764),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (42, 0.36275942706810876),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (43, 0.42648348436129785),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (44, 0.10084770534931306),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (45, 0.09470914937152879),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (46, 0.0944168371821105),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (47, 0.21660333235895937),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (48, 0.21543408360128619),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (49, 0.3197895352236188),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (50, 0.4641917567962584),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (51, 0.2814966384098217),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (52, 0.25109617071031864),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (53, 0.09178602747734581),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (54, 0.33528208126278863),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (55, 0.38526746565331776),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (56, 0.43729903536977494),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (57, 0.16866413329435836),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (58, 0.2814966384098217),
+[2025-01-06 12:55:06,990][flwr][INFO] - 	              (59, 0.3878982753580824),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (60, 0.2508038585209003),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (61, 0.07132417421806489),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (62, 0.23852674656533177),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (63, 0.28529669687225956),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (64, 0.16749488453668518),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (65, 0.19351066939491376),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (66, 0.2943583747442268),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (67, 0.35749780765857936),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (68, 0.2358959368605671),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (69, 0.400175387313651),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (70, 0.1853259280912014),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (71, 0.31102016954106987),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (72, 0.33498976907337036),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (73, 0.16924875767319497),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (74, 0.6498099970768781),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (75, 0.30985092078339666),
+[2025-01-06 12:55:06,991][flwr][INFO] - 	              (76, 0.3028354282373575),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (77, 0.30838935983630517),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (78, 0.19789535223618826),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (79, 0.21426483484361297),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (80, 0.29114294066062557),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (81, 0.22771119555685473),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (82, 0.20286465945629933),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (83, 0.4402221572639579),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (84, 0.27711195556854723),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (85, 0.14323297281496639),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (86, 0.29815843320666474),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (87, 0.3960830166617948),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (88, 0.38702133878982753),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (89, 0.2548962291727565),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (90, 0.3756211634025139),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (91, 0.24729611224788073),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (92, 0.2098801520023385),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (93, 0.1905875475007308),
+[2025-01-06 12:55:06,992][flwr][INFO] - 	              (94, 0.26074247296112246),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (95, 0.34463607132417423),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (96, 0.2087109032446653),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (97, 0.21835720549546916),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (98, 0.2329728149663841),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (99, 0.22624963460976322),
+[2025-01-06 12:55:06,993][flwr][INFO] - 	              (100, 0.2519731072785735)]}
+[2025-01-06 12:55:06,993][flwr][INFO] - 

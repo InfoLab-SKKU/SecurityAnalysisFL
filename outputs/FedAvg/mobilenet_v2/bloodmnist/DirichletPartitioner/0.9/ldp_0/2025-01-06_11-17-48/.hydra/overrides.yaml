@@ -1,0 +1,7 @@
+- dataset.subset=bloodmnist
+- strategy.name=FedAvg
+- model.name=mobilenet_v2
+- dataset.partitioner.name=DirichletPartitioner
+- dataset.partitioner.alpha=0.9
+- model.num_classes=8
+- ldp.epsilon=0
