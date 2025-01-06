@@ -3,10 +3,10 @@ model:
   num_classes: 9
 
 client:
-  count: 200
+  count: 50
   resources:
-    num_cpus: 1 #number of cpus per client
-    num_gpus: 1 # Fraction of clients per gpu
+    num_cpus: 24 #number of cpus
+    num_gpus: 0.125 # Fraction of clients per gpu
 
 dataset:
   name: "albertvillanova/medmnist-v2" # dataset name on Hugging Face [ "BahaaEldin0/NIH-Chest-Xray-14", BahaaEldin0/NIH-Chest-Xray-14-with-Augmentation, "hf-vision/chest-xray-pneumonia", "marmal88/skin_cancer", SilpaCS/Augmented_alzheimer]
@@ -26,7 +26,8 @@ strategy:
     momentum: 0.9
     local_epochs: 1
     local_batch_size: 16
-  num_rounds: 50
+
+  num_rounds: 100
   device: "cuda" # "cuda" or "cpu"
   total_gpus: 1
   total_cpus: 32
@@ -37,7 +38,7 @@ poisoning:
   gaussian_noise: False
   crop: 0
   size: [224,224]
-  fraction: 0.1
+  fraction: 0
 
 
   attack: "label-flipping"
@@ -57,7 +58,7 @@ poisoning:
   attack_total_cpus: 32
 
 ldp:
-  epsilon: 0.7
+  epsilon: 0
   delta: 1e-5
   noise_multiplier: 0.1
 
