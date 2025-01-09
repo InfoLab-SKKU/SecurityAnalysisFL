@@ -5,45 +5,8 @@ import numpy as np
 from src.modules.attacks.utils import get_ar_params
 
 
-class Attack(ABC):
-    """
-    A generic interface for attack
-    """
 
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
-        
-        return inputs, targets
-
-    def on_before_backprop(self, model, loss):
-        return model, loss
-
-    def on_after_backprop(self, model, loss):
-        return model, loss
-
-class Benin(ABC):
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
-        return inputs, targets
-
-    def on_before_backprop(self, model, loss):
-        return model, loss
-
-    def on_after_backprop(self, model, loss):
-        return model, loss
-
-
-
-class Noops(ABC):
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
-        return inputs, targets
-
-    def on_before_backprop(self, model, loss):
-        return model, loss
-
-    def on_after_backprop(self, model, loss):
-        return model, loss
-
-
-class AutoRegressorAttack(Attack):
+class AutoRegressorAttack:
 
     def __init__(self, config):
         super().__init__()
@@ -71,7 +34,10 @@ class AutoRegressorAttack(Attack):
             self.epsilon = 8/255
 
         self.ar_params = get_ar_params(num_classes=self.num_classes)
+        self.ar_params = [torch.clamp(param, -1, 1) for param in self.ar_params]
+        self.ar_params *= 255
         print(self.crop, self.size, self.gaussian_noise,self.epsilon,self.num_channels,self.num_classes)
+
     def generate(self, index, p=np.inf):
         start_signal = torch.randn((self.num_channels, self.size[0], self.size[1]))
         kernel_size = 3
@@ -82,16 +48,15 @@ class AutoRegressorAttack(Attack):
 
         for i in range(rows_to_update):
             for j in range(cols_to_update):
-                val = F.conv2d(
+                val = torch.nn.functional.conv2d(
                     start_signal[:, i: i + kernel_size, j: j + kernel_size],
                     ar_coeff,
                     groups=self.num_channels,
-                )
+                )#.clamp(-1,1)
                 noise = torch.randn(1) if self.gaussian_noise else 0
                 start_signal[:, i + kernel_size - 1, j + kernel_size - 1] = (
                         val.squeeze() + noise
                 )
-
         start_signal_crop = start_signal[:, self.crop:, self.crop:]
         generated_norm = torch.norm(start_signal_crop, p=p, dim=(0, 1, 2))
         scale = (1 / generated_norm) * self.epsilon
@@ -104,8 +69,7 @@ class AutoRegressorAttack(Attack):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         for i in range(batch_size):
-            delta, _ = self.generate(p=2, index=targets[i])
-            print(f"iteration {i} -- delta-size={delta.size()}  -- inputs-size={inputs[i].size()}----------------------------------")
+            delta, _ = self.generate(p=0.75, index=targets[i])
             adv_input = (inputs[i] + delta.to(device)).clamp(0, 1)
             adv_inputs.append(adv_input)
         return torch.stack(adv_inputs), targets
@@ -123,7 +87,7 @@ class AutoRegressorAttack(Attack):
 class AttackFactory:
 
     @staticmethod
-    def create_attack(config) -> Attack:
+    def create_attack(config):
         name = config.poisoning.name
         if name == "ar":
             return AutoRegressorAttack(config)
