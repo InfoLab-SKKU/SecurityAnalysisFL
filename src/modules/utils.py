@@ -7,26 +7,16 @@ from torchvision.transforms import Compose, Normalize, ToTensor, Grayscale, Resi
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 
-from src.modules.attacks.attack import Attack
 
 
 # Transformation to convert images to tensors and apply normalization
 def apply_transforms(batch: dict) -> dict:
-    """
-    Apply transformations to the batch of images, including resizing, grayscale conversion,
-    tensor conversion, and normalization.
 
-    Args:
-        batch (dict): Batch of images and labels where 'image' is a list of images.
-
-    Returns:
-        dict: Batch with transformed images.
-    """
     transform = Compose([
-        Resize((224, 224)),
-        Grayscale(num_output_channels=3),  # Convert grayscale to 3 channels
+        #Resize((224, 224)),
+        #Grayscale(num_output_channels=3),  # Convert grayscale to 3 channels
         ToTensor(),
-        Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # ImageNet mean and std normalization
+        #Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # ImageNet mean and std normalization
     ])
 
     # Apply transformations
@@ -53,7 +43,7 @@ def get_local_dp(config) -> LocalDpMod:
 
 
 # Borrowed from Pytorch quickstart example
-def train(net: nn.Module, trainloader: DataLoader, optim: Optimizer, attack: Attack, epochs: int, device: str):
+def train(net: nn.Module, trainloader: DataLoader, optim: Optimizer, attack, epochs: int, device: str):
     """
     Train the neural network on the training dataset.
 
