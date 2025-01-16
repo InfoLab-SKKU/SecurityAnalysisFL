@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader
 from src.modules.attacks.attack import Benin, AttackFactory
 from src.modules.utils import train, test, apply_transforms
 from src.modules.model import ModelFactory
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 
 def add_laplace_noise(tensor: torch.Tensor, epsilon: float) -> torch.Tensor:
@@ -33,6 +34,7 @@ class FlowerClient(fl.client.NumPyClient):
         # Initialize the model
         self.model = ModelFactory.create_model(config).to(self.device)
         self.epsilon = config.ldp.epsilon
+        self.attack_epoch = config.poisoning.attack_epoch
 
         fraction = float(config.poisoning.fraction)
         r = np.random.random(1)[0]
@@ -42,6 +44,7 @@ class FlowerClient(fl.client.NumPyClient):
         else:
             print(f"client {client_id} is Benin----------------------------------------")
             self.attack = Benin()
+        print(f"attack object type: {self.attack.__class__.__name__}")
 
     def get_parameters(self, config=None):
         """Retrieve model parameters as NumPy arrays."""
@@ -52,8 +55,16 @@ class FlowerClient(fl.client.NumPyClient):
         set_params(self.model, parameters)
         valloader = DataLoader(self.valset, batch_size=64)
 
-        loss, accuracy = test(self.model, valloader, device=self.device)
-        return float(loss), len(valloader.dataset), {"accuracy": float(accuracy)}
+        loss, accuracy, precision, recall, f1 = test(self.model, valloader, device=self.device)
+
+        metrics = {
+            "accuracy": float(accuracy),
+            "precision": float(precision),
+            "recall": float(recall),
+            "f1_score": float(f1)
+        }
+
+        return float(loss), len(valloader.dataset), metrics
 
     def fit(self, parameters, config):
         raise NotImplementedError("fit method must be implemented in subclasses.")
@@ -69,7 +80,12 @@ class FedAvgClient(FlowerClient):
         optimizer = optim.Adam(self.model.parameters(), lr=0.001)
 
         # Train the model
-        train(self.model, trainloader, optimizer, self.attack,epochs=epochs, device=self.device)
+        if self.attack.__class__.__name__ != "Benin":
+            train(self.model, trainloader, optimizer, self.attack,epochs=self.attack_epoch, device=self.device)
+        else:
+            train(self.model, trainloader, optimizer, self.attack,epochs=epochs, device=self.device)
+
+
 
         # Add Laplace noise to model parameters for privacy
         for name, param in self.model.named_parameters():

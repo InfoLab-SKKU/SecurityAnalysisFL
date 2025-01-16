@@ -23,15 +23,78 @@ def fit_config(epochs: int) -> Dict[str, Scalar]:
     return config
 
 
-def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
-    """Aggregation function for (federated) evaluation metrics, i.e. those returned by
-    the client's evaluate() method."""
-    # Multiply accuracy of each client by number of examples used
-    accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
-    examples = [num_examples for num_examples, _ in metrics]
+# Define type aliases for clarity
+Metrics = Dict[str, float]
 
-    # Aggregate and return custom metric (weighted average)
-    return {"accuracy": sum(accuracies) / sum(examples)}
+# Dictionary to track client accuracies across rounds
+client_accuracies: Dict[int, List[float]] = {}
+
+
+def update_client_metrics(metrics: List[Tuple[int, Metrics]]) -> None:
+    """Update accuracy tracking for each client."""
+    for client_id, m in metrics:
+        if client_id not in client_accuracies:
+            client_accuracies[client_id] = []
+        client_accuracies[client_id].append(m["accuracy"])
+
+
+def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
+    """
+    Aggregation function for federated evaluation metrics.
+
+    Args:
+        metrics (List[Tuple[int, Metrics]]): List of tuples containing the number of examples
+                                             and the metrics dictionary for each client.
+
+    Returns:
+        Metrics: Dictionary containing weighted averages of metrics.
+    """
+    # Update individual client metrics (optional, for logging or debugging)
+    update_client_metrics(metrics)
+
+    # Initialize accumulators
+    accuracies = []
+    precisions = []
+    recalls = []
+    f1_scores = []
+    examples = []
+
+    # Iterate over metrics to compute weighted contributions
+    for num_examples, m in metrics:
+        examples.append(num_examples)
+        accuracies.append(num_examples * m.get("accuracy", 0.0))
+        precisions.append(num_examples * m.get("precision", 0.0))
+        recalls.append(num_examples * m.get("recall", 0.0))
+        f1_scores.append(num_examples * m.get("f1_score", 0.0))
+
+    # Compute weighted averages
+    total_examples = sum(examples)
+    weighted_accuracy = sum(accuracies) / total_examples
+    weighted_precision = sum(precisions) / total_examples
+    weighted_recall = sum(recalls) / total_examples
+    weighted_f1_score = sum(f1_scores) / total_examples
+
+    # Return aggregated metrics
+    return {
+        "accuracy": weighted_accuracy,
+        "precision": weighted_precision,
+        "recall": weighted_recall,
+        "f1_score": weighted_f1_score,
+    }
+
+
+def report_client_behavior():
+    """Report the behavior of each client after training is complete."""
+    print("Client Behavior Report:")
+    for client_id, accuracies in client_accuracies.items():
+        avg_accuracy = sum(accuracies) / len(accuracies) if accuracies else 0
+        max_accuracy = max(accuracies) if accuracies else 0
+        min_accuracy = min(accuracies) if accuracies else 0
+        print(f"Client {client_id}:")
+        print(f"  Average Accuracy: {avg_accuracy:.4f}")
+        print(f"  Max Accuracy: {max_accuracy:.4f}")
+        print(f"  Min Accuracy: {min_accuracy:.4f}")
+
 
 
 
@@ -68,7 +131,7 @@ class ServerFactory:
             disable_progress_bar()
 
             testloader = DataLoader(testset, batch_size=32)
-            loss, accuracy = test(model, testloader, device=device)
+            loss, accuracy, precision, recall, f1 = test(model, testloader, device=device)
 
             return loss, {"accuracy": accuracy}
 

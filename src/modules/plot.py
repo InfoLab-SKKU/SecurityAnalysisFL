@@ -29,27 +29,45 @@ def moving_average(data, window_size):
 
 
 def smooth_plot(data, title, path, smoothing_window=5):
-    print(f"{data.metrics_centralized = }")
+    print(f"{data = }++++++++++")
 
-    global_accuracy_centralised = data.metrics_centralized["accuracy"]
+    global_accuracy_centralised = data.metrics_distributed["accuracy"]
+    global_recolt_centralised = data.metrics_distributed["recall"]
+    #global_loss_centralised = data.loss_distributed["loss"]
+    global_f1_centralised = data.metrics_distributed["f1_score"]
+    global_precision_centralised = data.metrics_distributed["precision"]
+
     round = [data[0] for data in global_accuracy_centralised]
     #acc = [100.0 * data[1] for data in global_accuracy_centralised]
     acc = [data[1] for data in global_accuracy_centralised]
+    recolt = [data[1] for data in global_recolt_centralised]
+    #loss = [data[1] for data in global_loss_centralised]
+    f1 = [data[1] for data in global_f1_centralised]
+    precision = [data[1] for data in global_precision_centralised]
+
 
     # Apply smoothing
     if smoothing_window > 1:
         acc_smooth = moving_average(acc, smoothing_window)
+        recolt_smooth = moving_average(recolt, smoothing_window)
+        #loss_smooth = moving_average(loss, smoothing_window)
+        f1_smooth = moving_average(f1, smoothing_window)
         round_smooth = round[:len(acc_smooth)]
+        precision_smooth = moving_average(precision, smoothing_window)
     else:
         acc_smooth = acc
         round_smooth = round
+        recolt_smooth = recolt
+        #loss_smooth = loss
+        f1_smooth = f1
+        precision_smooth = precision
 
     # Save the smoothed results to a CSV file
-    csv_path = Path(path) / 'PathologicalPartitioner_30.csv'
+    csv_path = Path(path) / 'results.csv'
     with open(csv_path, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["Round", "Accuracy"])
-        writer.writerows(zip(round_smooth, acc_smooth))
+        writer.writerow(["Round", "accuracy", "recall", "precision", "f1_score"])
+        writer.writerows(zip(round_smooth, acc_smooth, recolt_smooth, precision_smooth, f1_smooth))
 
     print(f"Results saved to {csv_path}")
     plt.plot(round_smooth, acc_smooth, color="blue", label="Accuracy")
