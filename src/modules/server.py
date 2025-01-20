@@ -10,7 +10,7 @@ from flwr.common.typing import Scalar
 from pyarrow import Scalar
 from torch.utils.data import DataLoader
 
-from src.modules.utils import test, apply_transforms
+from src.modules.utils import test, apply_transforms, test_specific_class
 from src.modules.model import ModelFactory
 
 
@@ -57,6 +57,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
     precisions = []
     recalls = []
     f1_scores = []
+    asrs = []
     examples = []
 
     # Iterate over metrics to compute weighted contributions
@@ -66,6 +67,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
         precisions.append(num_examples * m.get("precision", 0.0))
         recalls.append(num_examples * m.get("recall", 0.0))
         f1_scores.append(num_examples * m.get("f1_score", 0.0))
+        asrs.append(num_examples * m.get("asr", 0.0))
 
     # Compute weighted averages
     total_examples = sum(examples)
@@ -73,6 +75,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
     weighted_precision = sum(precisions) / total_examples
     weighted_recall = sum(recalls) / total_examples
     weighted_f1_score = sum(f1_scores) / total_examples
+    weighted_asr = sum(asrs) / total_examples
 
     # Return aggregated metrics
     return {
@@ -80,6 +83,7 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
         "precision": weighted_precision,
         "recall": weighted_recall,
         "f1_score": weighted_f1_score,
+        "asr": weighted_asr,
     }
 
 
@@ -131,7 +135,10 @@ class ServerFactory:
             disable_progress_bar()
 
             testloader = DataLoader(testset, batch_size=32)
-            loss, accuracy, precision, recall, f1 = test(model, testloader, device=device)
+            loss, accuracy, precision, recall, f1, asr = test_specific_class(model,
+                                                                        testloader,
+                                                                        device=device,
+                                                                        specific_class=conf.poisoning.poison_label)
 
             return loss, {"accuracy": accuracy}
 

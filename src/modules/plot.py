@@ -33,6 +33,7 @@ def smooth_plot(data, title, path, smoothing_window=5):
 
     global_accuracy_centralised = data.metrics_distributed["accuracy"]
     global_recolt_centralised = data.metrics_distributed["recall"]
+    global_asr_centralised = data.metrics_distributed["asr"]
     #global_loss_centralised = data.loss_distributed["loss"]
     global_f1_centralised = data.metrics_distributed["f1_score"]
     global_precision_centralised = data.metrics_distributed["precision"]
@@ -44,6 +45,7 @@ def smooth_plot(data, title, path, smoothing_window=5):
     #loss = [data[1] for data in global_loss_centralised]
     f1 = [data[1] for data in global_f1_centralised]
     precision = [data[1] for data in global_precision_centralised]
+    asr = [data[1] for data in global_asr_centralised]
 
 
     # Apply smoothing
@@ -54,6 +56,7 @@ def smooth_plot(data, title, path, smoothing_window=5):
         f1_smooth = moving_average(f1, smoothing_window)
         round_smooth = round[:len(acc_smooth)]
         precision_smooth = moving_average(precision, smoothing_window)
+        asr_smooth = moving_average(asr, smoothing_window)
     else:
         acc_smooth = acc
         round_smooth = round
@@ -61,13 +64,14 @@ def smooth_plot(data, title, path, smoothing_window=5):
         #loss_smooth = loss
         f1_smooth = f1
         precision_smooth = precision
+        asr_smooth = asr
 
     # Save the smoothed results to a CSV file
     csv_path = Path(path) / 'results.csv'
     with open(csv_path, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["Round", "accuracy", "recall", "precision", "f1_score"])
-        writer.writerows(zip(round_smooth, acc_smooth, recolt_smooth, precision_smooth, f1_smooth))
+        writer.writerow(["Round", "accuracy", "recall", "precision", "f1_score", "asr"])
+        writer.writerows(zip(round_smooth, acc_smooth, recolt_smooth, precision_smooth, f1_smooth, asr))
 
     print(f"Results saved to {csv_path}")
     plt.plot(round_smooth, acc_smooth, color="blue", label="Accuracy")

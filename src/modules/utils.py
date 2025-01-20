@@ -135,13 +135,86 @@ def test(net: nn.Module, testloader: DataLoader, device: str) -> Tuple[float, fl
     accuracy = correct / len(testloader.dataset)
     return total_loss, accuracy, precision, recall, f1
 
+from sklearn.metrics import precision_score, recall_score, f1_score
+from typing import Tuple
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader
+
+
+def test_specific_class(
+        net: nn.Module, testloader: DataLoader, device: str, specific_class: int
+) -> Tuple[float, float, float, float, float, float, float]:
+    """
+    Evaluate the neural network on the test dataset and calculate metrics,
+    including the accuracy for a specific class.
+
+    Args:
+        net (nn.Module): The neural network model to evaluate.
+        testloader (DataLoader): DataLoader providing batches of test data.
+        device (str): Device to perform testing on ('cuda' or 'cpu').
+        specific_class (int): The target class to calculate accuracy for.
+
+    Returns:
+        Tuple[float, float, float, float, float, float]:
+            Test loss, accuracy, precision, recall, F1 score, specific class accuracy.
+    """
+    criterion = nn.CrossEntropyLoss()
+    correct, total_loss = 0, 0.0
+    y_true = []
+    y_pred = []
+
+    correct_class = 0  # Correct predictions for specific class
+    total_class = 0  # Total samples for specific class
+
+    net.eval()  # Set model to evaluation mode
+    with torch.no_grad():
+        for batch in testloader:
+            # Move data to device
+            images, labels = batch["image"].to(device), batch["label"].to(device)
+
+            # Forward pass
+            outputs = net(images)
+            total_loss += criterion(outputs, labels).item()
+
+            # Predictions
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+
+            # Append predictions and true labels for metric calculations
+            y_true.extend(labels.cpu().numpy())
+            y_pred.extend(predicted.cpu().numpy())
+
+            # Calculate specific class metrics
+            for true, pred in zip(labels.cpu().numpy(), predicted.cpu().numpy()):
+                if true == specific_class:
+                    total_class += 1
+                    if pred == specific_class:
+                        correct_class += 1
+
+    # Calculate metrics
+    precision = precision_score(y_true, y_pred, average="weighted")
+    recall = recall_score(y_true, y_pred, average="weighted")
+    f1 = f1_score(y_true, y_pred, average="weighted")
+    print(f"Precision: {precision}, Recall: {recall}, F1: {f1}")
+
+    # General accuracy
+    accuracy = correct / len(testloader.dataset)
+
+    # Specific class accuracy
+    asr = 1 - (correct_class / total_class) if total_class > 0 else 0.0
+    print(f"Specific Class {specific_class} ASR: {asr * 100:.2f}%")
+
+    return total_loss, accuracy, precision, recall, f1, asr
+
+
 def test_with_attack_success_rate(
     net: nn.Module,
     testloader: DataLoader,
     device: str,
     poison_label: int,
     target_label: int
-) -> Tuple[float, float, float, float, float, float, float, float]:
+) -> Tuple[float, float, float, float, float, float, float]:
     """
     Evaluate the neural network on the test dataset and calculate metrics, including
     false positive rate, clean accuracy, and attack success rate.

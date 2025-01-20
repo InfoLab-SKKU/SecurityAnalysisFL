@@ -3,10 +3,10 @@ model:
   num_classes: 8
 
 client:
-  count: 200
+  count: 50
   resources:
     num_cpus: 24 #number of cpus
-    num_gpus: 0.5 # Fraction of clients per gpu
+    num_gpus: 0.25 # Fraction of clients per gpu
 
 dataset:
   name: "albertvillanova/medmnist-v2" # dataset name on Hugging Face [ "BahaaEldin0/NIH-Chest-Xray-14", BahaaEldin0/NIH-Chest-Xray-14-with-Augmentation, "hf-vision/chest-xray-pneumonia", "marmal88/skin_cancer", SilpaCS/Augmented_alzheimer]
@@ -20,7 +20,7 @@ dataset:
 
 strategy:
   name: "FedAvg"
-  fraction_train_clients: 0.05
+  fraction_train_clients: 0.3
   config_fit:
     lr: 0.01
     momentum: 0.9
@@ -28,7 +28,7 @@ strategy:
     local_batch_size: 64
     local_val_batch_size: 64
 
-  num_rounds: 10
+  num_rounds: 100
   device: "cuda" # "cuda" or "cpu"
   total_gpus: 1
   total_cpus: 32
@@ -39,8 +39,9 @@ poisoning:
   gaussian_noise: False
   crop: 0
   size: [224,224]
-  fraction: 0.5
 
+
+  fraction: 0
 
   attack_type: "targeted" # "untargeted" or "targeted"
   poison_label: 1
