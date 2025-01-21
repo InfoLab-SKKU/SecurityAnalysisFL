@@ -142,22 +142,23 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 
 
-def test_specific_class(
+
+def test_specific_class_with_exclusion(
         net: nn.Module, testloader: DataLoader, device: str, specific_class: int
-) -> Tuple[float, float, float, float, float, float, float]:
+) -> Tuple[float, float, float, float, float, float, float, float]:
     """
     Evaluate the neural network on the test dataset and calculate metrics,
-    including the accuracy for a specific class.
+    including normal accuracy and accuracy excluding the poisoned class.
 
     Args:
         net (nn.Module): The neural network model to evaluate.
         testloader (DataLoader): DataLoader providing batches of test data.
         device (str): Device to perform testing on ('cuda' or 'cpu').
-        specific_class (int): The target class to calculate accuracy for.
+        specific_class (int): The poisoned class to exclude from accuracy calculations.
 
     Returns:
-        Tuple[float, float, float, float, float, float]:
-            Test loss, accuracy, precision, recall, F1 score, specific class accuracy.
+        Tuple[float, float, float, float, float, float, float, float]:
+            Test loss, normal accuracy, accuracy excluding poisoned class, precision, recall, F1 score, ASR.
     """
     criterion = nn.CrossEntropyLoss()
     correct, total_loss = 0, 0.0
@@ -166,6 +167,8 @@ def test_specific_class(
 
     correct_class = 0  # Correct predictions for specific class
     total_class = 0  # Total samples for specific class
+    excluded_correct = 0  # Correct predictions excluding poisoned class
+    excluded_total = 0  # Total samples excluding poisoned class
 
     net.eval()  # Set model to evaluation mode
     with torch.no_grad():
@@ -185,27 +188,39 @@ def test_specific_class(
             y_true.extend(labels.cpu().numpy())
             y_pred.extend(predicted.cpu().numpy())
 
-            # Calculate specific class metrics
+            # Exclude the poisoned class from general accuracy
             for true, pred in zip(labels.cpu().numpy(), predicted.cpu().numpy()):
+                if true != specific_class:  # Exclude poisoned class
+                    excluded_total += 1
+                    if true == pred:
+                        excluded_correct += 1
+
+                # Specific class metrics
                 if true == specific_class:
                     total_class += 1
                     if pred == specific_class:
                         correct_class += 1
 
     # Calculate metrics
-    precision = precision_score(y_true, y_pred, average="weighted")
-    recall = recall_score(y_true, y_pred, average="weighted")
-    f1 = f1_score(y_true, y_pred, average="weighted")
-    print(f"Precision: {precision}, Recall: {recall}, F1: {f1}")
+    precision = precision_score(y_true, y_pred, average="weighted", zero_division=0)
+    recall = recall_score(y_true, y_pred, average="weighted", zero_division=0)
+    f1 = f1_score(y_true, y_pred, average="weighted", zero_division=0)
 
-    # General accuracy
-    accuracy = correct / len(testloader.dataset)
+    # General accuracy (normal)
+    normal_accuracy = correct / len(testloader.dataset)
 
-    # Specific class accuracy
+    # Accuracy excluding poisoned class
+    accuracy_excluding_poisoned = excluded_correct / excluded_total if excluded_total > 0 else 0.0
+
+    # Specific class ASR (attack success rate)
     asr = 1 - (correct_class / total_class) if total_class > 0 else 0.0
+
+    print(f"Precision: {precision}, Recall: {recall}, F1: {f1}")
+    print(f"Normal Accuracy: {normal_accuracy * 100:.2f}%")
+    print(f"Accuracy Excluding Poisoned Class: {accuracy_excluding_poisoned * 100:.2f}%")
     print(f"Specific Class {specific_class} ASR: {asr * 100:.2f}%")
 
-    return total_loss, accuracy, precision, recall, f1, asr
+    return total_loss, normal_accuracy, accuracy_excluding_poisoned, precision, recall, f1, asr
 
 
 def test_with_attack_success_rate(

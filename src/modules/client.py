@@ -10,7 +10,7 @@ from torch import optim
 from torch.utils.data import DataLoader
 
 from src.modules.attacks.attack import Benin, AttackFactory
-from src.modules.utils import train, test, apply_transforms, test_specific_class
+from src.modules.utils import train, test, apply_transforms, test_specific_class_with_exclusion
 from src.modules.model import ModelFactory
 from sklearn.metrics import precision_score, recall_score, f1_score
 
@@ -56,11 +56,12 @@ class FlowerClient(fl.client.NumPyClient):
         set_params(self.model, parameters)
         valloader = DataLoader(self.valset, batch_size=64)
 
-        loss, accuracy, precision, recall, f1, asr = test_specific_class(self.model, valloader, device=self.device,
+        loss, accuracy, accuracy_excluding_poisoned, precision, recall, f1, asr = test_specific_class_with_exclusion(self.model, valloader, device=self.device,
                                                                     specific_class=self.poison_label)
 
         metrics = {
             "accuracy": float(accuracy),
+            "accuracy_excluding_poisoned": float(accuracy_excluding_poisoned),
             "precision": float(precision),
             "recall": float(recall),
             "f1_score": float(f1),

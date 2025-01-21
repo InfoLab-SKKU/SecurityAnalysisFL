@@ -33,7 +33,8 @@ def smooth_plot(data, title, path, smoothing_window=5):
 
     global_accuracy_centralised = data.metrics_distributed["accuracy"]
     global_recolt_centralised = data.metrics_distributed["recall"]
-    global_asr_centralised = data.metrics_distributed["asr"]
+    global_asr_centralised = data.metrics_centralized["asr"]
+    global_asr_distributed = data.metrics_distributed["asr"]
     #global_loss_centralised = data.loss_distributed["loss"]
     global_f1_centralised = data.metrics_distributed["f1_score"]
     global_precision_centralised = data.metrics_distributed["precision"]
