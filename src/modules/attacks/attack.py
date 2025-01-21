@@ -22,6 +22,9 @@ class Attack(ABC):
 
     def on_after_backprop(self, model, loss):
         return model, loss
+        
+    def on_dataset_load(self, trainset, valset):
+        return trainset, valset
 
 class Benin(ABC):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
@@ -44,9 +47,11 @@ class Noops(ABC):
 
     def on_after_backprop(self, model, loss):
         return model, loss
+        
+    def on_dataset_load(self, trainset, valset):
+        return trainset, valset
 
-
-class AutoRegressorAttack:
+class AutoRegressorAttack(Attack):
 
     def __init__(self, config):
         super().__init__()
