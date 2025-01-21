@@ -26,10 +26,8 @@ def add_laplace_noise(tensor: torch.Tensor, epsilon: float) -> torch.Tensor:
 
 
 class FlowerClient(fl.client.NumPyClient):
-    def __init__(self, trainset, valset, config, client_id=None):
+    def __init__(self, client_dataset, config, client_id=None):
         self.client_id = client_id
-        self.trainset = trainset
-        self.valset = valset
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         # Initialize the model
         self.model = ModelFactory.create_model(config).to(self.device)
@@ -46,6 +44,19 @@ class FlowerClient(fl.client.NumPyClient):
             print(f"client {client_id} is Benin----------------------------------------")
             self.attack = Benin()
         print(f"attack object type: {self.attack.__class__.__name__}")
+        
+        client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
+
+        trainset = client_dataset_splits["train"]
+        valset = client_dataset_splits["test"]
+
+        trainset, valset = self.attack.on_dataset_load(trainset, valset)
+
+        trainset = trainset.with_transform(apply_transforms)
+        valset = valset.with_transform(apply_transforms)
+
+        self.trainset = trainset
+        self.valset = valset
 
     def get_parameters(self, config=None):
         """Retrieve model parameters as NumPy arrays."""
@@ -151,17 +162,12 @@ class ClientFactory:
             client_dataset = dataset.load_partition(
                 client_id, "train"
             )
-            client_dataset_splits = client_dataset.train_test_split(test_size=0.1, seed=42)
-            trainset = client_dataset_splits["train"]
-            valset = client_dataset_splits["test"]
 
-            trainset = trainset.with_transform(apply_transforms)
-            valset = valset.with_transform(apply_transforms)
 
             if conf.strategy.name in ["FedAvg", "FedAvgM", "FedProx"]:
-                return FedAvgClient(trainset, valset, conf, client_id).to_client()
+                return FedAvgClient(client_dataset, conf, client_id).to_client()
             elif conf.strategy.name == "FedNova":
-                return FedNovaClient(trainset, valset, conf, client_id).to_client()
+                return FedNovaClient(client_dataset, conf, client_id).to_client()
             else:
                 raise ValueError(f"Unsupported Algorithm name: {conf.model.name}")
 
