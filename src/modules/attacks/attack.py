@@ -3,9 +3,11 @@ from abc import ABC, abstractmethod
 import torch
 import torch.nn.functional as F
 import numpy as np
+from matplotlib import pyplot as plt
 from torch import nn
 
 from src.modules.attacks.utils import get_ar_params
+from src.modules.utils import apply_transforms_0
 
 
 class Attack(ABC):
@@ -26,7 +28,7 @@ class Attack(ABC):
     def on_dataset_load(self, trainset, valset):
         return trainset, valset
 
-class Benin(ABC):
+class Benin(Attack):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
@@ -38,7 +40,7 @@ class Benin(ABC):
 
 
 
-class Noops(ABC):
+class Noops(Attack):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
@@ -129,7 +131,7 @@ class AutoRegressorAttack(Attack):
             label = item["label"]
             delta, _ = self.generate(p=2, index=label)
             new_image = old_image + delta
-            #print(f"===================================={i}=============================================")
+            print(f"===================================={i}=============================================")
             #print(delta)
             #show_images(old_image, delta, title=f"imagine {i + 1}")
             #show_images(, new_image, title=f"imagine {i + 1}")

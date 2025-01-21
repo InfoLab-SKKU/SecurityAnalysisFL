@@ -34,11 +34,11 @@ strategy:
   total_cpus: 32
 
 poisoning:
-  name: "label-flipping"  # Type of poisoning attack ["ar", "label-flipping"]
-  epsilon: 0.031372549
-  gaussian_noise: False
+  name: "ar"  # Type of poisoning attack ["ar", "label-flipping"]
+  epsilon: 1
+  gaussian_noise: True
   crop: 0
-  size: [224,224]
+  size: [28,28]
 
 
   fraction: 0.5

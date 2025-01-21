@@ -7,7 +7,6 @@ from torchvision.transforms import Compose, Normalize, ToTensor, Grayscale, Resi
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 
-from src.modules.attacks.attack import Attack
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
 
@@ -63,7 +62,7 @@ def get_local_dp(config) -> LocalDpMod:
 
 
 # Borrowed from Pytorch quickstart example
-def train(net: nn.Module, trainloader: DataLoader, optim: Optimizer, attack: Attack, epochs: int, device: str):
+def train(net: nn.Module, trainloader: DataLoader, optim: Optimizer, attack, epochs: int, device: str):
     """
     Train the neural network on the training dataset.
 
