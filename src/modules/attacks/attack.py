@@ -108,7 +108,9 @@ class AutoRegressorAttack(Attack):
         generated_norm = torch.norm(start_signal_crop, p=p, dim=(0, 1, 2))
         scale = (1 / generated_norm) * self.epsilon
         start_signal_crop = scale * start_signal_crop
-        return start_signal_crop, generated_norm
+        shifted_signal = torch.roll(start_signal_crop, shifts=(shift_y, shift_x), dims=(1, 2))
+
+        return start_signal_crop, generated_norm, shifted_signal
 
     def on_dataset_load(self, trainset, valset):
         def show_images(original, attacked, title=""):
@@ -129,107 +131,10 @@ class AutoRegressorAttack(Attack):
         for i, item in enumerate(new_train):
             old_image = item["image"]
             label = item["label"]
-            delta, _ = self.generate(p=2, index=label)
-            new_image = old_image + delta
-            print(f"===================================={i}=============================================")
-            #print(delta)
-            #show_images(old_image, delta, title=f"imagine {i + 1}")
-            #show_images(, new_image, title=f"imagine {i + 1}")
-            new_train[i]["image"] = new_image
-        #batch["image"] = [transform(img) for img in batch["image"]]
+            delta, _, shifted_delta = self.generate(p=2, index=label,, shift_x=17, shift_y=17)
+            new_image = old_image + shifted_delta
 
-        #print(new_train)
-        return new_train, valset
-    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
-        return inputs, targets
-
-    def on_before_backprop(self, model, loss):
-        return model, loss
-
-    def on_after_backprop(self, model, gradients):
-        return gradients
-
-class TargetedAutoRegressorAttack(Attack):
-
-    def __init__(self, config):
-        super().__init__()
-
-        # TODO check the number of channels
-        self.num_channels = 3
-
-        self.num_classes = int(config.model.num_classes)
-        self.epsilon = float(config.poisoning.epsilon)
-        self.size = tuple(config.poisoning.size)
-        self.poison_label = float(config.poisoning.poison_label)
-        self.crop = int(config.poisoning.crop)
-        self.gaussian_noise = bool(config.poisoning.gaussian_noise)
-
-        if self.size is None:
-            self.size = (36,36)
-
-        if self.crop is None:
-            self.crop = 3
-
-        if self.gaussian_noise is None:
-            self.gaussian_noise = False
-
-        if self.epsilon is None:
-            self.epsilon = 8/255
-
-        self.ar_params = get_ar_params(num_classes=self.num_classes)
-        self.ar_params = [torch.clamp(param, -1, 1) for param in self.ar_params]
-        self.ar_params *= 255
-        print(self.crop, self.size, self.gaussian_noise,self.epsilon,self.num_channels,self.num_classes)
-
-    def generate(self, index, p=np.inf):
-        start_signal = torch.randn((self.num_channels, self.size[0], self.size[1]))
-        kernel_size = 3
-        rows_to_update = self.size[0] - kernel_size + 1
-        cols_to_update = self.size[1] - kernel_size + 1
-        ar_param = self.ar_params[index]
-        ar_coeff = ar_param.unsqueeze(dim=1)
-
-        for i in range(rows_to_update):
-            for j in range(cols_to_update):
-                val = torch.nn.functional.conv2d(
-                    start_signal[:, i: i + kernel_size, j: j + kernel_size],
-                    ar_coeff,
-                    groups=self.num_channels,
-                )#.clamp(-1,1)
-                noise = torch.randn(1) if self.gaussian_noise else 0
-                start_signal[:, i + kernel_size - 1, j + kernel_size - 1] = (
-                        val.squeeze() + noise
-                )
-        start_signal_crop = start_signal[:, self.crop:, self.crop:]
-        generated_norm = torch.norm(start_signal_crop, p=p, dim=(0, 1, 2))
-        scale = (1 / generated_norm) * self.epsilon
-        start_signal_crop = scale * start_signal_crop
-        return start_signal_crop, generated_norm
-
-    def on_dataset_load(self, trainset, valset):
-        def show_images(original, attacked, title=""):
-            fig, axes = plt.subplots(1, 2, figsize=(10, 5))
-
-            axes[0].imshow(original.permute(1, 2, 0))  # Convert CHW to HWC
-            axes[0].set_title("Original")
-            axes[0].axis("off")
-
-            axes[1].imshow(attacked.permute(1, 2, 0))  # Convert CHW to HWC
-            axes[1].set_title("Attacked")
-            axes[1].axis("off")
-
-            plt.suptitle(title)
-            plt.show()
-        new_train = trainset.with_transform(apply_transforms_0)
-
-        for i, item in enumerate(new_train):
-            old_image = item["image"]
-            label = item["label"]
-            if label != self.poison_label:
-                continue
-            delta, _ = self.generate(p=2, index=label)
-            new_image = old_image + delta
-            print(f"===================================={i}=============================================")
+            #print(f"===================================={i}=============================================")
             #print(delta)
             #show_images(old_image, delta, title=f"imagine {i + 1}")
             #show_images(, new_image, title=f"imagine {i + 1}")
