@@ -110,7 +110,7 @@ class AutoRegressorAttack(Attack):
 
         return start_signal_crop, generated_norm, shifted_signal
 
-    def on_dataset_load(self, trainset, valset):
+        def on_dataset_load(self, trainset, valset):
         def show_images(original, attacked, title=""):
             fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
@@ -125,34 +125,21 @@ class AutoRegressorAttack(Attack):
             plt.suptitle(title)
             plt.show()
         new_train = trainset.with_transform(apply_transforms_0)
-        modified_items = []
-        for i, item in enumerate(new_train):
+
+        def apply_modifications(item):
             old_image = item["image"]
             label = item["label"]
-            delta, _, shifted_delta = self.generate(p=2, index=label,, shift_x=17, shift_y=17)
-            new_image = old_image + shifted_delta
-            
-            new_train[i]["image"] = new_image
-            modified_items.append({"image": new_image, "label": label})
-            show_images(modified_items[i]["image"], new_image, title=f"imagine {i + 1}")
 
-        class ModifiedDataset(torch.utils.data.Dataset):
-            def __init__(self, items):
-                self.items = items
+            delta, _, delta2 = self.generate2(p=2, index=label, shift_x=17, shift_y=17)
+            new_image = old_image + delta2
 
-            def __len__(self):
-                return len(self.items)
+            show_images(new_image, delta2, title=f"Image with Label {label}")
 
-            def __getitem__(self, idx):
-                return self.items[idx]
+            return {"image": new_image, "label": label}
+        modified_trainset = new_train.map(apply_modifications)
+        return modified_trainset, valset
 
-            # Create the modified dataset
-
-        new_trainset = ModifiedDataset(modified_items)
-        #batch["image"] = [transform(img) for img in batch["image"]]
-
-        #print(new_train)
-        return new_train, valsett
+    
     def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
