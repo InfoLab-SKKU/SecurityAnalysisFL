@@ -20,7 +20,7 @@ dataset:
 
 strategy:
   name: "FedAvg"
-  fraction_train_clients: 0.3
+  fraction_train_clients: 0.1
   config_fit:
     lr: 0.01
     momentum: 0.9
@@ -41,9 +41,9 @@ poisoning:
   size: [224,224]
 
 
-  fraction: 0
+  fraction: 0.5
 
-  attack_type: "targeted" # "untargeted" or "targeted"
+  attack_type: "adaptive-targeted" # "untargeted" or "targeted" or "adaptive-targeted"
   poison_label: 1
   target_label: 0
   attack_epoch: 10

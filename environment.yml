@@ -1,4 +1,4 @@
-name: fl
+name: SecurityAnalysisFL
 channels:
   - defaults
   - conda-forge

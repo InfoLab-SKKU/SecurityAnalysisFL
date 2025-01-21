@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 import torch
 import torch.nn.functional as F
 import numpy as np
+from torch import nn
+
 from src.modules.attacks.utils import get_ar_params
 
 
@@ -11,7 +13,7 @@ class Attack(ABC):
     A generic interface for attack
     """
 
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         
         return inputs, targets
 
@@ -22,7 +24,7 @@ class Attack(ABC):
         return model, loss
 
 class Benin(ABC):
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
     def on_before_backprop(self, model, loss):
@@ -34,7 +36,7 @@ class Benin(ABC):
 
 
 class Noops(ABC):
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
     def on_before_backprop(self, model, loss):
@@ -131,7 +133,7 @@ class LabelFlipAttack(Attack):
         if self.epsilon is None:
             self.epsilon = 0.1
 
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         batch_size = inputs.size(0)
         possible_labels = list(range(self.num_classes))
         adv_targets = targets.clone()
@@ -160,7 +162,7 @@ class TargetedLabelFlipAttack(Attack):
             self.poison_label = float(config.poisoning.poison_label)
             self.target_label = float(config.poisoning.target_label)
 
-        def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+        def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
             """
             Updates the target labels in the batch to the specified target class.
 
@@ -196,6 +198,65 @@ class TargetedLabelFlipAttack(Attack):
             # No changes. Pass-through.
             return gradients
 
+
+class AdaptiveTargetedLabelFlipAttack(Attack):
+
+    def __init__(self, config):
+        super().__init__()
+        self.model = None
+        self.device = None
+        self.num_classes = int(config.model.num_classes)
+        self.poison_label = float(config.poisoning.poison_label)
+        self.target_label = float(config.poisoning.target_label)
+
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
+        """
+        Updates the target labels in the batch to the second-best predicted class.
+
+        Args:
+            inputs (torch.Tensor): The batch of input data.
+            targets (torch.Tensor): The batch of original target labels.
+
+        Returns:
+            inputs (torch.Tensor): The unchanged input data.
+            adv_targets (torch.Tensor): The new adversarial target labels set to the second-best predicted class.
+        """
+        self.model = net
+        self.device = device
+        # Ensure the model and device are available
+        if not hasattr(self, "model") or not hasattr(self, "device"):
+            raise ValueError("The attack must have access to 'model' and 'device' attributes.")
+
+        self.model.eval()  # Set the model to evaluation mode
+        with torch.no_grad():
+            # Get predictions from the model
+            inputs = inputs.to(self.device)
+            logits = self.model(inputs)  # Shape: [batch_size, num_classes]
+            probabilities = torch.softmax(logits, dim=1)  # Convert logits to probabilities
+            #print(f"probabilities={probabilities}===============================")
+            # Find the top-2 predicted classes for each input
+            top2_preds = torch.topk(probabilities, k=2, dim=1)
+            top_classes = top2_preds.indices  # Shape: [batch_size, 2]
+            # Clone the original targets
+            adv_targets = targets.clone()
+
+            # Flip only the specified class
+            for idx, current_label in enumerate(targets):
+                if current_label.item() == self.poison_label:  # Check if it's the poisoned class
+                    adv_targets[idx] = top_classes[idx, 1]  # Set to the second-best predicted class
+
+        # print(f"original_targets={targets.cpu()} -- modified_adv_targets={adv_targets.cpu()}")
+        self.model.train()
+        return inputs, adv_targets
+
+    def on_before_backprop(self, model, loss):
+        # No changes. Pass-through.
+        return model, loss
+
+    def on_after_backprop(self, model, gradients):
+        # No changes. Pass-through.
+        return gradients
+
 class AttackFactory:
 
     @staticmethod
@@ -209,6 +270,8 @@ class AttackFactory:
                 return TargetedLabelFlipAttack(config)
             elif type == "untargeted":
                 return LabelFlipAttack(config)
+            elif type == "adaptive-targeted":
+                return AdaptiveTargetedLabelFlipAttack(config)
             else:
                 return NotImplementedError("The Attack type you are trying to use is not implemented yet.")
         else:

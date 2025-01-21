@@ -73,7 +73,7 @@ def train(net: nn.Module, trainloader: DataLoader, optim: Optimizer, attack: Att
         for batch in trainloader:
             # Move data to device
             images, labels = batch["image"].to(device), batch["label"].to(device)
-            images, labels = attack.on_batch_selection(images, labels)
+            images, labels = attack.on_batch_selection(net, device, images, labels)
             # Zero the parameter gradients
             optim.zero_grad()
 
