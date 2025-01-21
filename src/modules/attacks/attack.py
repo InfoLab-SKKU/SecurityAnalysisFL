@@ -106,7 +106,9 @@ class AutoRegressorAttack(Attack):
         generated_norm = torch.norm(start_signal_crop, p=p, dim=(0, 1, 2))
         scale = (1 / generated_norm) * self.epsilon
         start_signal_crop = scale * start_signal_crop
-        return start_signal_crop, generated_norm
+        shifted_signal = torch.roll(start_signal_crop, shifts=(shift_y, shift_x), dims=(1, 2))
+
+        return start_signal_crop, generated_norm, shifted_signal
 
     def on_dataset_load(self, trainset, valset):
         def show_images(original, attacked, title=""):
@@ -127,8 +129,9 @@ class AutoRegressorAttack(Attack):
         for i, item in enumerate(new_train):
             old_image = item["image"]
             label = item["label"]
-            delta, _ = self.generate(p=2, index=label)
-            new_image = old_image + delta
+            delta, _, shifted_delta = self.generate(p=2, index=label,, shift_x=17, shift_y=17)
+            new_image = old_image + shifted_delta
+            
             #print(f"===================================={i}=============================================")
             #print(delta)
             #show_images(old_image, delta, title=f"imagine {i + 1}")
