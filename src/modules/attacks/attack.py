@@ -125,22 +125,34 @@ class AutoRegressorAttack(Attack):
             plt.suptitle(title)
             plt.show()
         new_train = trainset.with_transform(apply_transforms_0)
-
+        modified_items = []
         for i, item in enumerate(new_train):
             old_image = item["image"]
             label = item["label"]
             delta, _, shifted_delta = self.generate(p=2, index=label,, shift_x=17, shift_y=17)
             new_image = old_image + shifted_delta
             
-            #print(f"===================================={i}=============================================")
-            #print(delta)
-            #show_images(old_image, delta, title=f"imagine {i + 1}")
-            #show_images(, new_image, title=f"imagine {i + 1}")
             new_train[i]["image"] = new_image
+            modified_items.append({"image": new_image, "label": label})
+            show_images(modified_items[i]["image"], new_image, title=f"imagine {i + 1}")
+
+        class ModifiedDataset(torch.utils.data.Dataset):
+            def __init__(self, items):
+                self.items = items
+
+            def __len__(self):
+                return len(self.items)
+
+            def __getitem__(self, idx):
+                return self.items[idx]
+
+            # Create the modified dataset
+
+        new_trainset = ModifiedDataset(modified_items)
         #batch["image"] = [transform(img) for img in batch["image"]]
 
         #print(new_train)
-        return new_train, valset
+        return new_train, valsett
     def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
