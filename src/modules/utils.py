@@ -11,6 +11,15 @@ from src.modules.attacks.attack import Attack
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
 
+def apply_transforms_0(batch: dict) -> dict:
+    transform = Compose([
+        ToTensor(),
+    ])
+    batch["image"] = [transform(img) for img in batch["image"]]
+    return batch
+
+
+
 # Transformation to convert images to tensors and apply normalization
 def apply_transforms(batch: dict) -> dict:
     """
