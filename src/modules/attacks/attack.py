@@ -1,11 +1,15 @@
 import random
 from abc import ABC, abstractmethod
+
+import ray
 import torch
 import torch.nn.functional as F
 import numpy as np
+from matplotlib import pyplot as plt
 from torch import nn
 
 from src.modules.attacks.utils import get_ar_params
+from src.modules.utils import apply_transforms_0
 
 
 class Attack(ABC):
@@ -26,7 +30,7 @@ class Attack(ABC):
     def on_dataset_load(self, trainset, valset):
         return trainset, valset
 
-class Benin(ABC):
+class Benin(Attack):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
@@ -38,7 +42,7 @@ class Benin(ABC):
 
 
 
-class Noops(ABC):
+class Noops(Attack):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
@@ -83,7 +87,7 @@ class AutoRegressorAttack(Attack):
         self.ar_params *= 255
         print(self.crop, self.size, self.gaussian_noise,self.epsilon,self.num_channels,self.num_classes)
 
-    def generate(self, index, p=np.inf):
+    def generate(self, index, p=np.inf, shift_x=0, shift_y=0):
         start_signal = torch.randn((self.num_channels, self.size[0], self.size[1]))
         kernel_size = 3
         rows_to_update = self.size[0] - kernel_size + 1
@@ -110,7 +114,7 @@ class AutoRegressorAttack(Attack):
 
         return start_signal_crop, generated_norm, shifted_signal
 
-        def on_dataset_load(self, trainset, valset):
+    def on_dataset_load(self, trainset, valset):
         def show_images(original, attacked, title=""):
             fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
@@ -124,22 +128,25 @@ class AutoRegressorAttack(Attack):
 
             plt.suptitle(title)
             plt.show()
+
         new_train = trainset.with_transform(apply_transforms_0)
 
         def apply_modifications(item):
             old_image = item["image"]
             label = item["label"]
 
-            delta, _, delta2 = self.generate2(p=2, index=label, shift_x=17, shift_y=17)
+            delta, _, delta2 = self.generate(p=2, index=label, shift_x=17, shift_y=17)
             new_image = old_image + delta2
 
             show_images(new_image, delta2, title=f"Image with Label {label}")
 
             return {"image": new_image, "label": label}
+
         modified_trainset = new_train.map(apply_modifications)
+        print(modified_trainset, modified_trainset.__class__.__name__)  # Should be same as before
         return modified_trainset, valset
 
-    
+
     def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
         return inputs, targets
 
