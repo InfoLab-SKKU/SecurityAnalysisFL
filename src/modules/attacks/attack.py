@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 from torch import nn
 
 from src.modules.attacks.utils import get_ar_params
-from src.modules.utils import apply_transforms_0
+from src.modules.utils import apply_transforms_0, apply_transforms, revert_transforms
 
 
 class Attack(ABC):
@@ -39,8 +39,6 @@ class Benin(Attack):
 
     def on_after_backprop(self, model, loss):
         return model, loss
-
-
 
 class Noops(Attack):
     def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
@@ -136,18 +134,21 @@ class AutoRegressorAttack(Attack):
             label = item["label"]
 
             delta, _, delta2 = self.generate(p=2, index=label, shift_x=17, shift_y=17)
-            new_image = old_image + delta2
+            modified_image = old_image + delta2
+            #show_images(new_image, delta2, title=f"Image with Label {label}")
 
-            show_images(new_image, delta2, title=f"Image with Label {label}")
-
-            return {"image": new_image, "label": label}
+            return {"image": modified_image, "label": label}
 
         modified_trainset = new_train.map(apply_modifications)
-        print(modified_trainset, modified_trainset.__class__.__name__)  # Should be same as before
+
+        #print(modified_trainset, modified_trainset.__class__.__name__)  # Should be same as before
+        # Revert `ToTensor` transformation
+        modified_trainset = modified_trainset.with_transform(revert_transforms)
+        print("passsssssssssssssssssssssssssssssssssssss")
         return modified_trainset, valset
 
 
-    def on_batch_selection(self, inputs: torch.Tensor, targets: torch.Tensor):
+    def on_batch_selection(self, net, device: str, inputs: torch.Tensor,targets: torch.Tensor):
         return inputs, targets
 
     def on_before_backprop(self, model, loss):

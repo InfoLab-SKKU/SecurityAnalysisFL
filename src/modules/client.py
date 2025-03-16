@@ -51,8 +51,8 @@ class FlowerClient(fl.client.NumPyClient):
         valset = client_dataset_splits["test"]
 
         trainset, valset = self.attack.on_dataset_load(trainset, valset)
-
         trainset = trainset.with_transform(apply_transforms)
+        print(f"trainset size: {len(trainset)}")
         valset = valset.with_transform(apply_transforms)
 
         self.trainset = trainset
@@ -67,12 +67,13 @@ class FlowerClient(fl.client.NumPyClient):
         set_params(self.model, parameters)
         valloader = DataLoader(self.valset, batch_size=64)
 
-        loss, accuracy, accuracy_excluding_poisoned, precision, recall, f1, asr = test_specific_class_with_exclusion(self.model, valloader, device=self.device,
+        loss, accuracy, accuracy_excluding_poisoned, precision, recall, f1, asr, acc_target = test_specific_class_with_exclusion(self.model, valloader, device=self.device,
                                                                     specific_class=self.poison_label)
 
         metrics = {
             "accuracy": float(accuracy),
             "accuracy_excluding_poisoned": float(accuracy_excluding_poisoned),
+            "accuracy_targeted": float(acc_target),
             "precision": float(precision),
             "recall": float(recall),
             "f1_score": float(f1),
