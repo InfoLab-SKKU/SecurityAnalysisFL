@@ -61,3 +61,17 @@ To set up the environment using Conda, follow these steps:
     ```bash
    cd scripts/ && bash multirun.sh
     ```
+## Citation
+
+We would appreciate it if you consider citing our work when using our code.
+
+```bibtex
+@inproceedings{soubih2025towards,
+  title={Towards Robust Federated Learning: Investigating Poisoning Attacks Under Clients Data Heterogeneity},
+  author={Soubih, Abdenour and Lahmer, Seyyid Ahmed and Abuhamad, Mohammed and Abuhmed, Tamer},
+  booktitle={2025 19th International Conference on Ubiquitous Information Management and Communication (IMCOM)},
+  pages={1--8},
+  year={2025},
+  organization={IEEE}
+}
+```
