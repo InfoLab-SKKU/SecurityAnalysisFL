@@ -158,6 +158,69 @@ class AutoRegressorAttack(Attack):
         return gradients
 
 
+class ImprovedAutoRegressorAttack:
+    def __init__(self, config):
+        self.num_classes = int(config.model.num_classes)
+        self.epsilon = float(config.poisoning.epsilon) if hasattr(config.poisoning, 'epsilon') else 8 / 255
+        self.size = tuple(config.poisoning.size) if hasattr(config.poisoning, 'size') else (36, 36)
+        self.crop = int(config.poisoning.crop) if hasattr(config.poisoning, 'crop') else 3
+        self.gaussian_noise = bool(config.poisoning.gaussian_noise) if hasattr(config.poisoning,
+                                                                               'gaussian_noise') else False
+
+        self.num_channels = 3  # Assuming RGB images
+        self.ar_params = [torch.randn((self.num_channels, 3, 3)) for _ in range(self.num_classes)]
+        print("Attack Config:", self.crop, self.size, self.gaussian_noise, self.epsilon, self.num_channels,
+              self.num_classes)
+
+    def generate(self, index, p=2, shift_x=0, shift_y=0):
+        start_signal = torch.randn((self.num_channels, self.size[0], self.size[1]))
+        kernel_size = 3
+        rows_to_update = self.size[0] - kernel_size + 1
+        cols_to_update = self.size[1] - kernel_size + 1
+        ar_coeff = self.ar_params[index].unsqueeze(dim=1)
+
+        for i in range(rows_to_update):
+            for j in range(cols_to_update):
+                val = F.conv2d(
+                    start_signal[:, i:i + kernel_size, j:j + kernel_size].unsqueeze(0),
+                    ar_coeff,
+                    groups=self.num_channels,
+                ).squeeze()
+                noise = torch.randn(1) * 0.1 if self.gaussian_noise else 0
+                start_signal[:, i + kernel_size - 1, j + kernel_size - 1] = val + noise
+
+        start_signal_crop = start_signal[:, self.crop:, self.crop:]
+        generated_norm = torch.norm(start_signal_crop, p=p, dim=(0, 1, 2))
+        scale = (self.epsilon / generated_norm) if generated_norm > 0 else 1
+        poisoned_signal = scale * start_signal_crop
+        poisoned_signal = torch.clamp(poisoned_signal, -self.epsilon, self.epsilon)
+
+        return poisoned_signal, generated_norm
+
+    def apply_attack(self, image, label):
+        delta, _ = self.generate(index=label, p=2, shift_x=17, shift_y=17)
+        poisoned_image = torch.clamp(image + delta, 0, 1)
+        return poisoned_image
+
+    def visualize_attack(self, original, attacked):
+        fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+        axes[0].imshow(original.permute(1, 2, 0))
+        axes[0].set_title("Original")
+        axes[0].axis("off")
+
+        axes[1].imshow(attacked.permute(1, 2, 0))
+        axes[1].set_title("Attacked")
+        axes[1].axis("off")
+        plt.show()
+
+    def on_dataset_load(self, trainset):
+        def apply_modifications(item):
+            return {"image": self.apply_attack(item["image"], item["label"]), "label": item["label"]}
+
+        modified_trainset = trainset.map(apply_modifications)
+        return modified_trainset
+
+
 class LabelFlipAttack(Attack):
 
     def __init__(self, config):
@@ -291,6 +354,25 @@ class AdaptiveTargetedLabelFlipAttack(Attack):
 
     def on_after_backprop(self, model, gradients):
         # No changes. Pass-through.
+        return gradients
+
+class DataPoisoningAttack(Attack):
+    """
+    A generic interface for data poisoning attacks.
+    """
+
+    def __init__(self, config):
+        super().__init__()
+        self.poison_label = config.poisoning.poison_label
+        self.attack_epoch = config.poisoning.attack_epoch
+
+    def on_batch_selection(self, net: nn.Module, device: str, inputs: torch.Tensor, targets: torch.Tensor):
+        return inputs, targets
+
+    def on_before_backprop(self, model, loss):
+        return model, loss
+
+    def on_after_backprop(self, model, gradients):
         return gradients
 
 class AttackFactory:

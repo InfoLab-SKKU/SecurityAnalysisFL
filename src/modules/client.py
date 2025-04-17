@@ -166,7 +166,7 @@ class ClientFactory:
             )
 
 
-            if conf.strategy.name in ["FedAvg", "FedAvgM", "FedProx"]:
+            if conf.strategy.name in ["FedAvg", "FedAvgM", "FedProx", "Multi-Krum"]:
                 return FedAvgClient(client_dataset, conf, client_id).to_client()
             elif conf.strategy.name == "FedNova":
                 return FedNovaClient(client_dataset, conf, client_id).to_client()

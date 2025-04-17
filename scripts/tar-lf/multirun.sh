@@ -35,13 +35,29 @@ run_experiment() {
   fi
 }
 
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "IiD" "alpha" 0.9 9 0 "targeted" 0.1
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "IiD" "alpha" 0.9 8 0 "targeted" 0.2
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "IiD" "alpha" 0.9 8 0 "targeted" 0.3
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "IiD" "alpha" 0.9 8 0 "targeted" 0.4
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "IiD" "alpha" 0.9 8 0 "targeted" 0.5
 
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.9 8 0 "targeted" 0.1
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.9 8 0 "targeted" 0.2
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.9 8 0 "targeted" 0.3
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.9 8 0 "targeted" 0.4
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.9 8 0 "targeted" 0.5
+
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.3 8 0 "targeted" 0.1
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.3 8 0 "targeted" 0.2
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.3 8 0 "targeted" 0.3
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.3 8 0 "targeted" 0.4
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.3 8 0 "targeted" 0.5
 
 run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.1 8 0 "targeted" 0.1
 run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.1 8 0 "targeted" 0.2
 run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.1 8 0 "targeted" 0.3
+run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.1 8 0 "targeted" 0.4
 run_experiment "FedAvg" "mobilenet_v2" "bloodmnist" "DirichletPartitioner" "alpha" 0.1 8 0 "targeted" 0.5
-
 
 # Final report
 echo "Experiments completed!"

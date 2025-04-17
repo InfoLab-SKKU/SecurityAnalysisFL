@@ -59,5 +59,5 @@ To set up the environment using Conda, follow these steps:
 ### Running multi Experiments
 4. **Run multi Experiments**
     ```bash
-   cd scripts/ && bash multirun.sh
+   cd scripts/ && bash multi-krum.sh
     ```
