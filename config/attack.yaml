@@ -1,0 +1,24 @@
+poisoning:
+  name: "label-flipping"  # Type of poisoning attack ["ar", "label-flipping"]
+  epsilon: 1
+  gaussian_noise: True
+  crop: 0
+  size: [28,28]
+
+
+  fraction: 0.3
+
+  attack_type: "targeted" # "untargeted" or "targeted" or "adaptive-targeted"
+  poison_label: 5
+  target_label: 3
+  attack_epoch: 5
+
+  attack_ratio: 0.5
+  attack_clients: 0.1
+  attack_rounds: 10
+  attack_lr: 0.01
+  attack_momentum: 0.9
+  attack_batch_size: 32
+  attack_device: "cuda"
+  attack_total_gpus: 1
+  attack_total_cpus: 32

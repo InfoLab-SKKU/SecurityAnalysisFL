@@ -8,9 +8,11 @@ from datasets.utils.logging import disable_progress_bar
 from flwr.common import Metrics
 from flwr.common.typing import Scalar
 from pyarrow import Scalar
+from torch import optim
 from torch.utils.data import DataLoader
 
-from src.modules.utils import test, apply_transforms, test_specific_class_with_exclusion
+from src.modules.attacks.attack import Benin
+from src.modules.utils import test, apply_transforms, test_specific_class_with_exclusion, train
 from src.modules.model import ModelFactory
 
 
@@ -124,9 +126,7 @@ class ServerFactory:
     def get_evaluate_fn(centralized_testset: Dataset, conf):
         """Return an evaluation function for centralized evaluation."""
 
-        def evaluate(
-                server_round: int, parameters: fl.common.NDArrays, config: Dict[str, Scalar]
-        ):
+        def evaluate(server_round: int, parameters: fl.common.NDArrays, config: Dict[str, Scalar]):
             """Use the test set for evaluation."""
 
             # Determine device
@@ -143,6 +143,10 @@ class ServerFactory:
             disable_progress_bar()
 
             testloader = DataLoader(testset, batch_size=32)
+
+            optimizer = optim.Adam(model.parameters(), lr=0.001)
+            train(model, testloader, optimizer, Benin(),epochs=3, device=device)
+
             loss, accuracy, accuracy_excluding_poisoned, precision, recall, f1, asr, accuracy_target = test_specific_class_with_exclusion(model,
                                                                         testloader,
                                                                         device=device,

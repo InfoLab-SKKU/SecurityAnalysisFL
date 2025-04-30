@@ -1,5 +1,6 @@
 from typing import Tuple
 
+import numpy as np
 import torch
 import torch.nn as nn
 from flwr.client.mod import LocalDpMod
@@ -10,6 +11,19 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 from torchvision.transforms.functional import to_pil_image
 
+
+def model2vector(model):
+    nparr = np.array([])
+    for key, var in model.items():
+        nplist = var.cpu().numpy()
+        nplist = nplist.ravel()
+        nparr = np.append(nparr, nplist)
+    return nparr
+
+def cosine_similarity(server_params, client_params):
+    s = model2vector(server_params)[0].flatten()
+    c = model2vector(client_params)[0].flatten()
+    return np.dot(s, c) / (np.linalg.norm(s) * np.linalg.norm(c) + 1e-8)
 
 def revert_transforms(batch: dict) -> dict:
     # Convert tensors back to PIL images

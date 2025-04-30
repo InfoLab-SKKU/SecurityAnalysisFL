@@ -1,0 +1,16 @@
+strategy:
+  name: "FedAvg" # Type of strategy ["FedAvg", "FedProx", "FedNova", "FedOpt", "FedMA", "FedDF"]
+  fraction_train_clients: 0.8
+  fraction_eval_clients: 0.5
+  min_available_clients: 3
+  config_fit:
+    lr: 0.01
+    momentum: 0.9
+    local_epochs: 1
+    local_batch_size: 64
+    local_val_batch_size: 64
+
+  num_rounds: 25
+  device: "cuda" # "cuda" or "cpu"
+  total_gpus: 1
+  total_cpus: 32

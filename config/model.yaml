@@ -1,0 +1,3 @@
+model:
+  name: "mobilenet_v2"
+  num_classes: 8

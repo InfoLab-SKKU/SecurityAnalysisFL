@@ -1,0 +1,9 @@
+dataset:
+  name: "albertvillanova/medmnist-v2" # dataset name on Hugging Face [ "BahaaEldin0/NIH-Chest-Xray-14", BahaaEldin0/NIH-Chest-Xray-14-with-Augmentation, "hf-vision/chest-xray-pneumonia", "marmal88/skin_cancer", SilpaCS/Augmented_alzheimer]
+  subset: "bloodmnist" # subset of the dataset ["tissuemnist", "pathmnist", "breastmnist", "organmnist_axial", "organmnist_coronal", "organmnist_sagittal"]
+  data_dir: "./data"
+  seed: 123
+  partitioner:
+    name: "IiD" # Type of data partition ["PathologicalPartitioner", "DirichletPartitioner", "Iid"]
+    alpha: 0.1 # heterogeneity degree *DirichletPartitioner
+    num_classes_per_partition: 2 # number of classes per partition *PathologicalPartitioner
